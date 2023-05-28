@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script>
+        var int = self.setInterval("a1()", 1);
+        function a1() {
+            var a = Date.now();
+            var b = 1681131049000;
+            var c = (a - b) / 1000;
+            var year = Math.floor(c / 31536000);
+            var day = Math.floor((c - year * 31536000) / 86400);
+            var hour = Math.floor((c - year * 31536000 - day * 86400) / 3600);
+            var min = Math.floor((c - year * 31536000 - day * 86400 - hour * 3600) / 60);
+            var s = Math.floor((c - year * 31536000 - day * 86400 - hour * 3600 - min * 60) * 1000) / 1000;
+            var year1 = Math.floor(year / 10);
+            var year2 = year - year1 * 10;
+            var day1 = Math.floor(day / 100);
+            var day2 = Math.floor((day - day1 * 100) / 10);
+            var day3 = day - day1 * 100 - day2 * 10;
+            var hour1 = Math.floor(hour / 10);
+            var hour2 = hour - hour1 * 10;
+            var min1 = Math.floor(min / 10);
+            var min2 = min - min1 * 10;
+            var s1 = Math.floor(s / 10);
+            var s2 = Math.floor(s - s1 * 10);
+            document.getElementById("c1").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+year1+".svg";
+            document.getElementById("c2").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+year2+".svg";
+            document.getElementById("c3").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+day1+".svg";
+            document.getElementById("c4").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+day2+".svg";
+            document.getElementById("c5").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+day3+".svg";
+            document.getElementById("c6").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+hour1+".svg";
+            document.getElementById("c7").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+hour2+".svg";
+            document.getElementById("c8").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+min1+".svg";
+            document.getElementById("c9").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+min2+".svg";
+            document.getElementById("c10").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+s1+".svg";
+            document.getElementById("c11").src="https://raw.githubusercontent.com/abpdf/zry/6c918d0b72c89f550a6c27ecd82a640cdb8a948c/4.10%20table/"+s2+".svg";
+        }
+    </script>
+</head>
+
+<body>
+</body>
+<div>
+    <div>
+        <img id="c1"/>
+        <img id="c2"/>
+        年
+        <img id="c3"/>
+        <img id="c4"/>
+        <img id="c5"/>
+        天
+    </div>
+    <div>
+        <img id="c6"/>
+        <img id="c7"/>
+        <svg width="15" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="70" r="3" fill="black" />
+            <circle cx="3" cy="130" r="3" fill="black" />
+        </svg>
+        <img id="c8"/>
+        <img id="c9"/>
+        <svg width="15" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="70" r="3" fill="black" />
+            <circle cx="3" cy="130" r="3" fill="black" />
+        </svg>
+        <img id="c10"/>
+        <img id="c11"/>
+    </div>
+</div>
+</body>
+
+</html>
