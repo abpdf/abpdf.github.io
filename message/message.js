@@ -12,3 +12,18 @@ for( var member=0;member<10;member=member+1){
     }
     number=number-1;
 }
+function c4(){
+    if(page===allPage){
+        alert("");
+    }
+    else{
+
+    }
+}
+function c5(){
+    if (page===1) {
+        alert("");
+    } else {
+        
+    }
+}
