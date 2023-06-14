@@ -1,3 +1,4 @@
+document.getElementById("i11").innerHTML="共"+number+"条消息";
 var allPage=Math.ceil(number/10);
 for( var member=0;member<10;member=member+1){
     if(number>0){
