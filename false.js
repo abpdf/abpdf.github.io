@@ -18,16 +18,16 @@ function a2() {
     var min2 = min - min1 * 10;
     var s1 = Math.floor(s / 10);
     var s2 = Math.floor(s - s1 * 10);
-    document.getElementById("c1").src = year1 + ".svg";
-    document.getElementById("c2").src = year2 + ".svg";
-    document.getElementById("c3").src = day1 + ".svg";
-    document.getElementById("c4").src = day2 + ".svg";
-    document.getElementById("c5").src = day3 + ".svg";
-    document.getElementById("c6").src = hour1 + ".svg";
-    document.getElementById("c7").src = hour2 + ".svg";
-    document.getElementById("c8").src = min1 + ".svg";
-    document.getElementById("c9").src = min2 + ".svg";
-    document.getElementById("c10").src = s1 + ".svg";
-    document.getElementById("c11").src = s2 + ".svg";
+    document.getElementById("c1").src = "number/" + year1 + ".svg";
+    document.getElementById("c2").src = "number/" + year2 + ".svg";
+    document.getElementById("c3").src = "number/" + day1 + ".svg";
+    document.getElementById("c4").src = "number/" + day2 + ".svg";
+    document.getElementById("c5").src = "number/" + day3 + ".svg";
+    document.getElementById("c6").src = "number/" + hour1 + ".svg";
+    document.getElementById("c7").src = "number/" + hour2 + ".svg";
+    document.getElementById("c8").src = "number/" + min1 + ".svg";
+    document.getElementById("c9").src = "number/" + min2 + ".svg";
+    document.getElementById("c10").src = "number/" + s1 + ".svg";
+    document.getElementById("c11").src = "number/" + s2 + ".svg";
     document.getElementById("c12").innerHTML = "已暂停";
 }
