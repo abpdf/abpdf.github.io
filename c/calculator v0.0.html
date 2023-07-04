@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script>
+		b = 0;
+		bits = 1;
+		decimal = 0;
+		function number(a) {
+			if (decimal === 0) {
+				b = b * 10 + a;
+				document.getElementById("aa").innerHTML = b;
+			}
+			if (decimal === 1) {
+				bits = bits * 10;
+				b = b + a / bits;
+				document.getElementById("aa").innerHTML = b;
+			}
+		}
+		function return_0() {
+			b = 0;
+			decimal = 0;
+			document.getElementById("aa").innerHTML = b;
+		}
+		function decimal_point() {
+			decimal = 1;
+		}
+		function reciprocal() {
+			if (b === 0) {
+				alert("0不能做除数!");
+
+			}
+			else {
+				b = 1 / b;
+				document.getElementById("aa").innerHTML = b;
+			}
+		}
+		function square () {
+			b = b * b;
+			document.getElementById("aa").innerHTML = b;
+		}
+		function square_root () {
+			b = Math.sqrt(b);
+			document.getElementById("aa").innerHTML = b;
+		}
+	</script>
+</head>
+<body>
+	<h1 id="aa">0</h1>
+	<table>
+		<tr>
+			<td><button onclick="reciprocal ()"><sup>1</sup>/<sub>x</sub></button></td>
+			<td><button onclick="square ()">x<sup>2</sup></button></td>
+			<td><button onclick="square_root ()"><sup>2</sup>√x</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (7)">7</button></td>
+			<td><button onclick="number (8)">8</button></td>
+			<td><button onclick="number (9)">9</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (4)">4</button></td>
+			<td><button onclick="number (5)">5</button></td>
+			<td><button onclick="number (6)">6</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (1)">1</button></td>
+			<td><button onclick="number (2)">2</button></td>
+			<td><button onclick="number (3)">3</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (0)">0</button></td>
+			<td colspan="2"><button onclick="return_0 ()">return 0</button></td>
+			<td><button onclick="decimal_point ()">.</button></td>
+		</tr>
+	</table>
+</body>
+</html>

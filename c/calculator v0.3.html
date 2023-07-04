@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Calculator</title>
+	<script>
+		var number1 = new Number;
+		var number2 = new Number;
+		var result_number = new Number;
+		var operator1;
+		order = 1;
+		b = 1;
+		number1 = 0;
+		number2 = 0;
+		result_number = 0;
+		bits = 1;
+		decimal1 = 0;
+		decimal2 = 0;
+		finish = 0;
+		function number(a) {
+			if (order === 1) {
+				if (finish === 1) {
+					b = 1;
+					number1 = 0;
+					number2 = 0;
+					result_number = 0;
+					bits = 1;
+					decimal1 = 0;
+					decimal2 = 0;
+					finish = 0;
+					document.getElementById("aa").innerHTML = number1;
+					document.getElementById("aaa").innerHTML = "";
+					document.getElementById("aaaa").innerHTML = "";
+					document.getElementById("aaaaa").innerHTML = "";
+				}
+				if (decimal1 === 0) {
+					number1 = number1 * 10 + a;
+					document.getElementById("aa").innerHTML = number1;
+				}
+				if (decimal1 === 1) {
+					bits = bits * 10;
+					b = a / bits;
+					number1 = b  + number1;
+					document.getElementById("aa").innerHTML = number1;
+				}
+			}
+			if (order === 2) {
+				if (finish === 1) {
+					number2 = 0;
+					decimal = 0;
+					bits = 1;
+					document.getElementById("aaaa").innerHTML = number2;
+				}
+				if (decimal2 === 0) {
+					number2 = number2 * 10 + a;
+					document.getElementById("aaaa").innerHTML = number2;
+				}
+				if (decimal2 === 1) {
+					bits = bits * 10;
+					number2 = a / bits + number2;
+					document.getElementById("aaaa").innerHTML = number2;
+				}
+			}
+		}
+
+		function C() {
+			number1 = 0;
+			number2 = 0;
+			decimal1 = 0;
+			decimal2 = 0;
+			bits = 1;
+			finish = 0;
+			document.getElementById("aa").innerHTML = number1;
+			document.getElementById("aaa").innerHTML = "";
+			document.getElementById("aaaa").innerHTML = "";
+			document.getElementById("aaaaa").innerHTML = "";
+			order = 1;
+			operator1 = 0; 
+			result_number = 0;
+		}
+		function decimal_point() {
+			if (order === 1) {
+				decimal1 = 1;
+			}
+			if (order === 2) {
+				decimal2 = 1;
+			}
+		}
+		function reciprocal() {
+			if (order === 1) {
+				if (number1 === 0) {
+					alert("0不能做除数!");
+				}
+				else {
+					number1 = 1 / number1;
+					document.getElementById("aa").innerHTML = number1;
+					finish = 1;
+				}
+			}
+			if (order === 2) {
+				if (number2 === 0) {
+					alert("0不能做除数!");
+				}
+				else {
+					number2 = 1 / number2;
+					document.getElementById("aaaa").innerHTML = number2;
+					finish = 1;
+				}
+			}
+		}
+		function square() {
+			if (order === 1) {
+				number1 = number1 * number1;
+				document.getElementById("aa").innerHTML = number1;
+				finish = 1;
+			}
+			if (order === 2) {
+				number2 = number2 * number2;
+				document.getElementById("aaaa").innerHTML = number2;
+				finish = 1;
+			}
+		}
+		function square_root() {
+			if (order === 1) {
+				number1 = Math.sqrt(number1);
+				document.getElementById("aa").innerHTML = number1;
+				finish = 1;
+			}
+			if (order === 2) {
+				number2 = Math.sqrt(number2);
+				document.getElementById("aaaa").innerHTML = number2;
+				finish = 1;
+			}
+		}
+		function percent() {
+			if (order === 1) {
+				number1 = number1 / 100;
+				document.getElementById("aa").innerHTML = number1;
+			}
+			if (order === 2) {
+				number2 = number2 / 100;
+				document.getElementById("aaaa").innerHTML = number2;
+			}
+		}
+		function CE() { 
+			if (order === 1) {
+				number1 = 0;
+				decimal1 = 0;
+				finish = 0;
+				bits = 1;
+				document.getElementById("aa").innerHTML = number1;
+			}
+			if (order === 2) {
+				number2 = 0;
+				decimal2 = 0;
+				finish = 0;
+				bits = 1;
+				document.getElementById("aaaa").innerHTML = "";
+				document.getElementById("aaaaa").innerHTML = "";
+			}
+		}
+		function operator(operator11) {
+			if (order === 1) {
+				if (operator11 === 1) {
+					document.getElementById("aaa").innerHTML = "+";
+					operator1 = operator11;
+					order = 2;
+				}
+				if (operator11 === 2) {
+					document.getElementById("aaa").innerHTML = "-";
+					operator1 = operator11;
+					order = 2;
+				}
+				if (operator11 === 3) {
+					document.getElementById("aaa").innerHTML = "×";
+					operator1 = operator11;
+					order = 2;
+				}
+				if (operator11 === 4) {
+					document.getElementById("aaa").innerHTML = "÷";
+					operator1 = operator11;
+					order = 2;
+				}
+			}
+			else {
+				if (number === 0) {
+					if (operator11 === 1) {
+						document.getElementById("aaa").innerHTML = "+";
+						operator1 = operator11;
+						order = 2;
+					}
+					if (operator11 === 2) {
+						document.getElementById("aaa").innerHTML = "-";
+						operator1 = operator11;
+						order = 2;
+					}
+					if (operator11 === 3) {
+						document.getElementById("aaa").innerHTML = "×";
+						operator1 = operator11;
+						order = 2;
+					}
+					if (operator11 === 4) {
+						document.getElementById("aaa").innerHTML = "÷";
+						operator1 = operator11;
+						order = 2;
+					}
+				}
+				else {
+					if (operator1 === 1) {
+						document.getElementById("aaa").innerHTML = "+";
+						result_number = number1 + number2;
+						number1 = result_number;
+					}
+					if (operator1 === 2) {
+						document.getElementById("aaa").innerHTML = "-";
+						result_number = number1 - number2;
+						number1 = result_number;
+					}
+					if (operator1 === 3) {
+						document.getElementById("aaa").innerHTML = "×";
+						result_number = number1 * number2;
+						number1 = result_number;
+					}
+					if (operator1 === 4) {
+						document.getElementById("aaa").innerHTML = "÷";
+						result_number = number1 / number2;
+						number1 = result_number;
+					}
+                    document.getElementById("aa").innerHTML = number1;
+					number2 = 0;
+					document.getElementById("aaaa").innerHTML = "";
+                    document.getElementById("aaaaa").innerHTML = "";
+					order = 2;
+				}
+			}
+		}
+		function equal() {
+			if (operator1 === 1) {
+				result_number = number1 + number2;
+			}
+			if (operator1 === 2) {
+				result_number = number1 - number2;
+			}
+			if (operator1 === 3) {
+				result_number = number1 * number2;
+			}
+			if (operator1 === 4) {
+				result_number = number1 / number2;
+			}
+			document.getElementById("aaaaa").innerHTML = "=" + result_number;
+			finish = 1;
+			order = 1;
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><h1 id="aa">0</h1></td>
+			<td><h1 id="aaa"></h1></td>
+			<td><h1 id="aaaa"></h1></td>
+			<td><h1 id="aaaaa"></h1></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><button onclick="percent ()">%</button></td>
+			<td><button onclick="CE ()">CE</button></td>
+			<td><button onclick="C ()">C</button></td>
+			<td><button onclick="operator (4)">÷</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="reciprocal ()"><sup>1</sup>/<sub>x</sub></button></td>
+			<td><button onclick="square ()">x<sup>2</sup></button></td>
+			<td><button onclick="square_root ()"><sup>2</sup>√x</button></td>
+			<td><button onclick="operator (3)">×</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (7)">7</button></td>
+			<td><button onclick="number (8)">8</button></td>
+			<td><button onclick="number (9)">9</button></td>
+			<td><button onclick="operator (2)">-</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (4)">4</button></td>
+			<td><button onclick="number (5)">5</button></td>
+			<td><button onclick="number (6)">6</button></td>
+			<td  rowspan = "2"><button onclick="operator (1)"><br />+</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="number (1)">1</button></td>
+			<td><button onclick="number (2)">2</button></td>
+			<td><button onclick="number (3)">3</button></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td ><button onclick="number (0)">0</button></td>
+			<td><button onclick="decimal_point ()">.</button></td>
+			<td><button onclick="equal ()">=</button></td>
+		</tr>
+	</table>
+</body>
+</html>
