@@ -19,57 +19,46 @@
 		var number4;
 		var number5;
 		var number6;
-
 		function number_0() {
 			number3 = 0;
 			number_inputting();
 		}
-
 		function number_1() {
 			number3 = 1;
 			number_inputting();
 		}
-
 		function number_2() {
 			number3 = 2;
 			number_inputting();
 		}
-
 		function number_3() {
 			number3 = 3;
 			number_inputting();
 		}
-
 		function number_4() {
 			number3 = 4;
 			number_inputting();
 		}
-
 		function number_5() {
 			number3 = 5;
 			number_inputting();
 		}
-
 		function number_6() {
 			number3 = 6;
 			number_inputting();
 		}
-
 		function number_7() {
 			number3 = 7;
 			number_inputting();
 		}
-
 		function number_8() {
 			number3 = 8;
 			number_inputting();
 		}
-
 		function number_9() {
 			number3 = 9;
 			number_inputting();
 		}
-
 		function c_button() {
 			number1 = 0;
 			number2 = 0;
@@ -84,7 +73,6 @@
 			operator1 = 0;
 			result_number = 0;
 		}
-
 		function ce_button() {
 			if (order === 1) {
 				number1 = 0;
@@ -102,7 +90,6 @@
 				document.getElementById("t1").innerHTML = number2;
 			}
 		}
-
 		function percent_button() {
 			if (order === 1) {
 				number1 = number1 / 100;
@@ -118,7 +105,6 @@
 				document.getElementById("t1").innerHTML = number2;
 			}
 		}
-
 		function division_button() {
 			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "÷";
@@ -179,7 +165,6 @@
 			}
 			bits = 1;
 		}
-
 		function multiplication_button() {
 			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "×";
@@ -240,7 +225,6 @@
 			}
 			bits = 1;
 		}
-
 		function subtraction_button() {
 			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "-";
@@ -301,7 +285,6 @@
 			}
 			bits = 1;
 		}
-
 		function addition_button() {
 			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "+";
@@ -362,7 +345,6 @@
 			}
 			bits = 1;
 		}
-
 		function equal_button() {
 			if (operator1 === 0) {
 				result_number = number1;
@@ -412,7 +394,6 @@
 			}
 			number1 = result_number;
 		}
-
 		function square_button() {
 			if (order === 1) {
 				document.getElementById("t3").innerHTML = number1 + "^ 2 =" + number1 * number1 + "<br />" + document.getElementById("t3").innerHTML;
@@ -430,7 +411,6 @@
 				finish1 = true;
 			}
 		}
-
 		function square_root_button() {
 			if (order === 1) {
 				if (number1 < 0) {
@@ -459,7 +439,6 @@
 			}
 			finish1 = true;
 		}
-
 		function reciprocal_button() {
 			if (order === 1) {
 				if (number1 === 0) {
@@ -487,7 +466,6 @@
 				finish1 = true;
 			}
 		}
-
 		function decimal_point_button() {
 			if (order === 1) {
 				if (decimal1 === false) {
@@ -508,8 +486,6 @@
 				decimal2 = true;
 			}
 		}
-
-
 		function positive_and_negative_button() {
 			if (order === 1) {
 				number1 = -1 * number1;
@@ -527,12 +503,11 @@
 				}
 			}
 		}
-
-
 		function return_button() {
 			if (order === 1) {
 				if (finish1 === true) {
 					number1 = 0;
+					bits = 1;
 					finish1 = false;
 					decimal1 = false;
 				}
