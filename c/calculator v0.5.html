@@ -1294,7 +1294,7 @@
 				else
 				{
 					number4 = number1;
-					number1 = Math.sqrt(number4);
+					number1 = Math.Sqrt(number4);
 				document.getElementById("t3").innerHTML = number4 + "^ 0.5=" + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
@@ -1308,7 +1308,7 @@
 				else
 				{
 					number5 = number2;
-					number2 = Math.sqrt(number5);
+					number2 = Math.Sqrt(number5);
 				document.getElementById("t3").innerHTML = number5 + "^ 0.5 =" + number2;
 					document.getElementById("t1").innerHTML = number2;
 				}
@@ -1389,7 +1389,7 @@
 				{
 					if (decimal1 === true)
 					{
-						number1 = Math.floor(number1 * bits / 10) * 10 / bits;
+						number1 = Math.Floor(number1 * bits / 10) * 10 / bits;
 						bits = bits / 10;
 						if (bits===1)
 						{
@@ -1398,7 +1398,7 @@
 					}
 					else
 					{
-						number1 = Math.floor(number1 / 10);
+						number1 = Math.Floor(number1 / 10);
 					}
 				}
 				document.getElementById("t1").innerHTML = number1;
@@ -1436,7 +1436,7 @@
 					{
 						if (decimal2 === true)
 						{
-							number2 = Math.floor(number2 * bits / 10) * 10 / bits;
+							number2 = Math.Floor(number2 * bits / 10) * 10 / bits;
 							bits = bits / 10;
 							if (bits === 1)
 							{
@@ -1446,7 +1446,7 @@
 						}
 						else
 						{
-							number2 = Math.floor(number2 / 10);
+							number2 = Math.Floor(number2 / 10);
 							document.getElementById("t1").innerHTML = number2;
 						}
 					}	
@@ -1499,4 +1499,4 @@
 	<p>历史记录</p>
 	<p id="t3"></p>
 </body>
-</html>
+</html>	
