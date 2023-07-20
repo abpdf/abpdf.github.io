@@ -17,14 +17,13 @@
 			setInterval(function () {
 				for (version = 0; true; version = version + 1) {
 
-					var url = "https://abpdf.github.io/c/calaulator%20v0." + version + ".html";
+					var url = "https://abpdf.github.io/c/calculator%20v0." + version + ".html";
 					var is404 = is404Page(url);
 					if (is404) {
-					} else {
 						version = version - 1;
-						window.location.href = "https://abpdf.github.io/c/calaulator%20v0." + version + ".html";
+						window.location.href = "https://abpdf.github.io/c/calculator%20v0." + version + ".html";
+						break;
 					}
-					console.log(is404); // 输出 true 或 false
 				}
 			}, 10);
 
