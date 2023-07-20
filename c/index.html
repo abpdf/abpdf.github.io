@@ -14,7 +14,7 @@
 			return xhr.status === 404;
 		}
 		function load() {
-			setInterval(function () {
+			var tiaozhuan = setInterval(function () {
 				for (version = 0; true; version = version + 1) {
 
 					var url = "https://abpdf.github.io/c/calculator%20v0." + version + ".html";
@@ -22,11 +22,11 @@
 					if (is404) {
 						version = version - 1;
 						window.location.href = "https://abpdf.github.io/c/calculator%20v0." + version + ".html";
+						clearInterval(tiaozhuan);
 						break;
 					}
 				}
 			}, 10);
-
 		}
 	</script>
 </head>
