@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<title>Calculator</title>
 	<script>
-		//此版本较上一版本跨度很大，更新了许多内容。
+		//此版本修复了点击小数点键后无法出现小数点的情况。
 		var number1 = 0;
 		var number2 = 0;
 		var number3 = 0;
@@ -20,27 +21,20 @@
 		var number5;
 		var number6;
 
-		function number_0()
-		{
+		function number_0() {
 			number3 = 0;
-			if (order === 1)
-			{
-				if (number1<0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -49,55 +43,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
-					number1 = number3 / bits+ number1;
+					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
-						document.getElementById("t2").innerHTML = number1+ "÷";
+					if (operator1 === 4) {
+						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
-					number2 = number2 * 10 +number3;
+				if (decimal2 === false) {
+					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -105,27 +88,20 @@
 			}
 		}
 
-		function number_1()
-		{
+		function number_1() {
 			number3 = 1;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -134,55 +110,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -190,27 +155,20 @@
 			}
 		}
 
-		function number_2()
-		{
+		function number_2() {
 			number3 = 2;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -219,55 +177,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -275,27 +222,20 @@
 			}
 		}
 
-		function number_3()
-		{
+		function number_3() {
 			number3 = 3;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -304,55 +244,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -360,27 +289,20 @@
 			}
 		}
 
-		function number_4()
-		{
+		function number_4() {
 			number3 = 4;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -389,55 +311,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -445,27 +356,20 @@
 			}
 		}
 
-		function number_5()
-		{
-			number3 =5;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+		function number_5() {
+			number3 = 5;
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -474,55 +378,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -530,27 +423,20 @@
 			}
 		}
 
-		function number_6()
-		{
+		function number_6() {
 			number3 = 6;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -559,55 +445,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -615,27 +490,20 @@
 			}
 		}
 
-		function number_7()
-		{
-			number3 =7;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+		function number_7() {
+			number3 = 7;
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -644,55 +512,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -700,27 +557,20 @@
 			}
 		}
 
-		function number_8()
-		{
+		function number_8() {
 			number3 = 8;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -729,55 +579,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -785,27 +624,20 @@
 			}
 		}
 
-		function number_9()
-		{
+		function number_9() {
 			number3 = 9;
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+			if (order === 1) {
+				if (number1 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			else
-			{
-				if (number2 < 0)
-				{
+			else {
+				if (number2 < 0) {
 					number3 = -1 * number3;
 				}
 			}
-			if (order === 1)
-			{
-				if (finish1 === true)
-				{
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					result_number = 0;
 					bits = 1;
@@ -814,55 +646,44 @@
 					document.getElementById("t1").innerHTML = number1;
 					finish1 = false;
 				}
-				if (decimal1 === false)
-				{
+				if (decimal1 === false) {
 					number1 = number1 * 10 + number3;
 					document.getElementById("t1").innerHTML = number1;
 				}
-				if (decimal1 === true)
-				{
+				if (decimal1 === true) {
 					bits = bits * 10;
 					number1 = number3 / bits + number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (finish2 === true)
-				{
+			if (order === 2) {
+				if (finish2 === true) {
 					finish2 = false;
-					if (operator1 === 4)
-					{
+					if (operator1 === 4) {
 						document.getElementById("t2").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = number1 + "+";
 					}
 				}
-				if (finish1 === true)
-				{
+				if (finish1 === true) {
 					finish1 = false;
 					number2 = 0;
 					decimal2 = false;
 					bits = 1;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === false)
-				{
+				if (decimal2 === false) {
 					number2 = number2 * 10 + number3;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				if (decimal2 === true)
-				{
+				if (decimal2 === true) {
 					bits = bits * 10;
 					number2 = number3 / bits + number2;
 					document.getElementById("t1").innerHTML = number2;
@@ -870,8 +691,7 @@
 			}
 		}
 
-		function c_button()
-		{
+		function c_button() {
 			number1 = 0;
 			number2 = 0;
 			decimal1 = false;
@@ -886,10 +706,8 @@
 			result_number = 0;
 		}
 
-		function ce_button()
-		{
-			if (order === 1)
-			{
+		function ce_button() {
+			if (order === 1) {
 				number1 = 0;
 				decimal1 = false;
 				finish1 = false;
@@ -897,35 +715,30 @@
 				bits = 1;
 				document.getElementById("t1").innerHTML = number1;
 			}
-			if (order === 2)
-			{
+			if (order === 2) {
 				number2 = 0;
 				decimal2 = false;
 				finish1 = false;
-				bits = 1; document.getElementById("t1").innerHTML = number2;
-			}
-		}
-
-		function percent_button()
-		{
-			if (order === 1)
-			{
-				number1 = number1 / 100;
-				document.getElementById("t3").innerHTML = number1 * 100 + "÷100 =" + number1;
-				document.getElementById("t1").innerHTML = number1;
-			}
-			if (order === 2)
-			{
-				number2 = number2 / 100;
-				document.getElementById("t3").innerHTML = number2 * 100 + "÷100 =" + number2;
+				bits = 1;
 				document.getElementById("t1").innerHTML = number2;
 			}
 		}
 
-		function division_button()
-		{
-			if (order === 1)
-			{
+		function percent_button() {
+			if (order === 1) {
+				number1 = number1 / 100;
+				document.getElementById("t3").innerHTML = number1 * 100 + "÷100 =" + number1 + "<br />" + document.getElementById("t3").innerHTML;
+				document.getElementById("t1").innerHTML = number1;
+			}
+			if (order === 2) {
+				number2 = number2 / 100;
+				document.getElementById("t3").innerHTML = number2 * 100 + "÷100 =" + number2 + "<br />" + document.getElementById("t3").innerHTML;
+				document.getElementById("t1").innerHTML = number2;
+			}
+		}
+
+		function division_button() {
+			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "÷";
 				operator1 = 4;
 				order = 2;
@@ -933,56 +746,47 @@
 				finish2 = true;
 
 			}
-			else
-			{
-				if (document.getElementById("t2").innerHTML === "")
-				{
+			else {
+				if (document.getElementById("t2").innerHTML === "") {
 					document.getElementById("t1").innerHTML = number1 + "÷";
 					document.getElementById("t2").innerHTML = "";
 					operator1 = 4;
 					order = 2;
 					finish2 = true;
 				}
-				else
-				{
+				else {
 					finish2 = true;
-					if (operator1 === 4)
-					{
-						if (number2 === 0)
-						{
+					if (operator1 === 4) {
+						if (number2 === 0) {
 							document.getElementById("t1").innerHTML = "0不能做除数！";
 							finish1 = true;
 						}
-						else
-						{
+						else {
 							document.getElementById("t2").innerHTML = "";
 							result_number = number1 / number2;
-				document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number;
+							document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 							number1 = result_number;
 							document.getElementById("t1").innerHTML = number1 + "÷";
 						}
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 * number2;
-				document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 - number2;
-				document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "÷";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 + number2;
-				document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "÷";
 					}
@@ -994,10 +798,8 @@
 			bits = 1;
 		}
 
-		function multiplication_button()
-		{
-			if (order === 1)
-			{
+		function multiplication_button() {
+			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "×";
 				operator1 = 3;
 				order = 2;
@@ -1005,56 +807,47 @@
 				finish2 = true;
 
 			}
-			else
-			{
-				if (document.getElementById("t2").innerHTML === "")
-				{
+			else {
+				if (document.getElementById("t2").innerHTML === "") {
 					document.getElementById("t1").innerHTML = number1 + "×";
 					document.getElementById("t2").innerHTML = "";
 					operator1 = 3;
 					order = 2;
 					finish2 = true;
 				}
-				else
-				{
+				else {
 					finish2 = true;
-					if (operator1 === 4)
-					{
-						if (number2 === 0)
-						{
+					if (operator1 === 4) {
+						if (number2 === 0) {
 							document.getElementById("t1").innerHTML = "0不能做除数！";
 							finish1 = true;
 						}
-						else
-						{
+						else {
 							document.getElementById("t2").innerHTML = "";
 							result_number = number1 / number2;
-				document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number;
+							document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 							number1 = result_number;
 							document.getElementById("t1").innerHTML = number1 + "×";
 						}
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 * number2;
-				document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "×";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 - number2;
-				document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "×";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 + number2;
-				document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "×";
 					}
@@ -1066,10 +859,8 @@
 			bits = 1;
 		}
 
-		function subtraction_button()
-		{
-			if (order === 1)
-			{
+		function subtraction_button() {
+			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "-";
 				operator1 = 2;
 				order = 2;
@@ -1077,56 +868,47 @@
 				finish2 = true;
 
 			}
-			else
-			{
-				if (document.getElementById("t2").innerHTML === "")
-				{
+			else {
+				if (document.getElementById("t2").innerHTML === "") {
 					document.getElementById("t1").innerHTML = number1 + "-";
 					document.getElementById("t2").innerHTML = "";
 					operator1 = 2;
 					order = 2;
 					finish2 = true;
 				}
-				else
-				{
+				else {
 					finish2 = true;
-					if (operator1 === 4)
-					{
-						if (number2 === 0)
-						{
+					if (operator1 === 4) {
+						if (number2 === 0) {
 							document.getElementById("t1").innerHTML = "0不能做除数！";
 							finish1 = true;
 						}
-						else
-						{
+						else {
 							document.getElementById("t2").innerHTML = "";
 							result_number = number1 / number2;
-				document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number;
+							document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 							number1 = result_number;
 							document.getElementById("t1").innerHTML = number1 + "-";
 						}
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 * number2;
-				document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "-";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 - number2;
-				document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "-";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 + number2;
-				document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "-";
 					}
@@ -1138,10 +920,8 @@
 			bits = 1;
 		}
 
-		function addition_button()
-		{
-			if (order === 1)
-			{
+		function addition_button() {
+			if (order === 1) {
 				document.getElementById("t1").innerHTML = number1 + "+";
 				operator1 = 1;
 				order = 2;
@@ -1149,56 +929,47 @@
 				finish2 = true;
 
 			}
-			else
-			{
-				if (document.getElementById("t2").innerHTML === "")
-				{
+			else {
+				if (document.getElementById("t2").innerHTML === "") {
 					document.getElementById("t1").innerHTML = number1 + "+";
 					document.getElementById("t2").innerHTML = "";
 					operator1 = 1;
 					order = 2;
 					finish2 = true;
 				}
-				else
-				{
+				else {
 					finish2 = true;
-					if (operator1 === 4)
-					{
-						if (number2 === 0)
-						{
+					if (operator1 === 4) {
+						if (number2 === 0) {
 							document.getElementById("t1").innerHTML = "0不能做除数！";
 							finish1 = true;
 						}
-						else
-						{
+						else {
 							document.getElementById("t2").innerHTML = "";
 							result_number = number1 / number2;
-				document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number;
+							document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 							number1 = result_number;
 							document.getElementById("t1").innerHTML = number1 + "+";
 						}
 					}
-					if (operator1 === 3)
-					{
+					if (operator1 === 3) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 * number2;
-				document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "+";
 					}
-					if (operator1 === 2)
-					{
+					if (operator1 === 2) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 - number2;
-				document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "+";
 					}
-					if (operator1 === 1)
-					{
+					if (operator1 === 1) {
 						document.getElementById("t2").innerHTML = "";
 						result_number = number1 + number2;
-				document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number;
+						document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 						number1 = result_number;
 						document.getElementById("t1").innerHTML = number1 + "+";
 					}
@@ -1210,55 +981,47 @@
 			bits = 1;
 		}
 
-		function equal_button()
-		{
-			if (operator1 === 0)
-			{
+		function equal_button() {
+			if (operator1 === 0) {
 				result_number = number1;
 				document.getElementById("t1").innerHTML = number1 + "=" + result_number;
 				document.getElementById("t2").innerHTML = "";
-				document.getElementById("t3").innerHTML = number1 + "=" + result_number;
+				document.getElementById("t3").innerHTML = number1 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 			}
-			if (operator1 === 1)
-			{
+			if (operator1 === 1) {
 				result_number = number1 + number2;
 				document.getElementById("t1").innerHTML = number1 + "+" + number2 + "=" + result_number;
 				document.getElementById("t2").innerHTML = "";
-				document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number;
+				document.getElementById("t3").innerHTML = number1 + "+" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 				finish1 = true;
 				order = 1;
 			}
-			if (operator1 === 2)
-			{
+			if (operator1 === 2) {
 				result_number = number1 - number2;
 				document.getElementById("t1").innerHTML = number1 + "-" + number2 + "=" + result_number;
 				document.getElementById("t2").innerHTML = "";
-				document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number;
+				document.getElementById("t3").innerHTML = number1 + "-" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 				finish1 = true;
 				order = 1;
 			}
-			if (operator1 === 3)
-			{
+			if (operator1 === 3) {
 				result_number = number1 * number2;
 				document.getElementById("t1").innerHTML = number1 + "×" + number2 + "=" + result_number;
 				document.getElementById("t2").innerHTML = "";
-				document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number;
+				document.getElementById("t3").innerHTML = number1 + "×" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 				finish1 = true;
 				order = 1;
 			}
-			if (operator1 === 4)
-			{
-				if (number2 === 0)
-				{
+			if (operator1 === 4) {
+				if (number2 === 0) {
 					result_number = number1;
 					document.getElementById("t1").innerHTML = "0不能做除数。";
 				}
-				else
-				{
+				else {
 					result_number = number1 / number2;
 					document.getElementById("t1").innerHTML = number1 + "÷" + number2 + "=" + result_number;
 					document.getElementById("t2").innerHTML = "";
-				document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number;
+					document.getElementById("t3").innerHTML = number1 + "÷" + number2 + "=" + result_number + "<br />" + document.getElementById("t3").innerHTML;
 					finish1 = true;
 					order = 1;
 				}
@@ -1266,82 +1029,65 @@
 			number1 = result_number;
 		}
 
-		function square_button()
-		{
-			if (order === 1)
-			{
-				document.getElementById("t3").innerHTML = number1 + "^ 2 =" + number1 * number1;
-				number1 = number1 * number1; 
+		function square_button() {
+			if (order === 1) {
+				document.getElementById("t3").innerHTML = number1 + "^ 2 =" + number1 * number1 + "<br />" + document.getElementById("t3").innerHTML;
+				number1 = number1 * number1;
 				document.getElementById("t1").innerHTML = number1;
 				finish1 = true;
 			}
-			if (order === 2)
-			{
-				document.getElementById("t3").innerHTML = number2 + "^ 2 =" + number2 * number2;
+			if (order === 2) {
+				document.getElementById("t3").innerHTML = number2 + "^ 2 =" + number2 * number2 + "<br />" + document.getElementById("t3").innerHTML;
 				number2 = number2 * number2;
 				document.getElementById("t1").innerHTML = number2;
 				finish1 = true;
 			}
 		}
 
-		function square_root_button()
-		{
-			if (order === 1)
-			{
-				if (number1 < 0)
-				{
+		function square_root_button() {
+			if (order === 1) {
+				if (number1 < 0) {
 					document.getElementById("t1").innerHTML = "负数没有平方根!";
 				}
-				else
-				{
+				else {
 					number4 = number1;
-					number1 = Math.Sqrt(number4);
-				document.getElementById("t3").innerHTML = number4 + "^ 0.5=" + number1;
+					number1 = Math.sqrt(number4);
+					document.getElementById("t3").innerHTML = number4 + "^ 0.5=" + number1 + "<br />" + document.getElementById("t3").innerHTML;
 					document.getElementById("t1").innerHTML = number1;
 				}
 			}
-			if (order === 2)
-			{
-				if (number2 < 0)
-				{
+			if (order === 2) {
+				if (number2 < 0) {
 					document.getElementById("t1").innerHTML = "负数没有平方根!";
 				}
-				else
-				{
+				else {
 					number5 = number2;
-					number2 = Math.Sqrt(number5);
-				document.getElementById("t3").innerHTML = number5 + "^ 0.5 =" + number2;
+					number2 = Math.sqrt(number5);
+					document.getElementById("t3").innerHTML = number5 + "^ 0.5 =" + number2 + "<br />" + document.getElementById("t3").innerHTML;
 					document.getElementById("t1").innerHTML = number2;
 				}
 			}
 			finish1 = true;
 		}
 
-		function reciprocal_button()
-		{
-			if (order === 1)
-			{
-				if (number1 === 0)
-				{
+		function reciprocal_button() {
+			if (order === 1) {
+				if (number1 === 0) {
 					document.getElementById("t1").innerHTML = "0不能做除数!";
 				}
-				else
-				{
-				document.getElementById("t3").innerHTML = "1/" + number1 + " =" + 1 / number1;
-					number1 = 1 / number1; 
+				else {
+					document.getElementById("t3").innerHTML = "1/" + number1 + " =" + 1 / number1 + "<br />" + document.getElementById("t3").innerHTML;
+					number1 = 1 / number1;
 					document.getElementById("t1").innerHTML = number1;
 				}
 				finish1 = true;
 			}
-			if (order === 2)
-			{
-				if (number2 === 0)
-				{
+			if (order === 2) {
+				if (number2 === 0) {
 					document.getElementById("t1").innerHTML = "0不能做除数!";
 				}
-				else
-				{
-				document.getElementById("t3").innerHTML = "1/" + number2 + " =" + 1 / number2;
+				else {
+					document.getElementById("t3").innerHTML = "1/" + number2 + " =" + 1 / number2 + "<br />" + document.getElementById("t3").innerHTML;
 					number2 = 1 / number2;
 					document.getElementById("t1").innerHTML = number2;
 				}
@@ -1349,113 +1095,110 @@
 			}
 		}
 
-		function decimal_point_button()
-		{
-			if (order === 1)
-			{
-				decimal1 = true;
+		function decimal_point_button() {
+			if (order === 1) {
+				if (decimal1 === false) {
+					decimal1 = true;
+					document.getElementById("t1").innerHTML = document.getElementById("t1").innerHTML + ".";
+				}
 			}
-			if (order === 2)
-			{
+			if (order === 2) {
+				if (document.getElementById("t2").innerHTML === "") {
+					document.getElementById("t2").innerHTML = document.getElementById("t1").innerHTML;
+					document.getElementById("t1").innerHTML = "0."
+				}
+				else {
+					if (decimal2 === false) {
+						document.getElementById("t1").innerHTML = document.getElementById("t1").innerHTML + ".";
+					}
+				}
 				decimal2 = true;
 			}
 		}
 
-		
-		function positive_and_negative_button()
-		{
-			if (order === 1)
-			{
+
+		function positive_and_negative_button() {
+			if (order === 1) {
 				number1 = -1 * number1;
-				document.getElementById("t1").innerHTML= number1;
+				document.getElementById("t1").innerHTML = number1;
 			}
-			if (order === 2)
-			{
-				number2 = -1 * number2;
-				document.getElementById("t1").innerHTML = number2;
+			if (order === 2) {
+				if (number2 != 0) {
+					number2 = -1 * number2;
+					if (document.getElementById("t2").innerHTML === "") {
+						document.getElementById("t1").innerHTML = number2;
+					}
+					else {
+						document.getElementById("t1").innerHTML = number2;
+					}
+				}
 			}
 		}
 
 
-		function return_button()
-		{
-			if (order ===1)
-			{
-				if (finish1===true)
-				{
+		function return_button() {
+			if (order === 1) {
+				if (finish1 === true) {
 					number1 = 0;
 					finish1 = false;
 				}
-				else
-				{
-					if (decimal1 === true)
-					{
-						number1 = Math.Floor(number1 * bits / 10) * 10 / bits;
+				else {
+					if (decimal1 === true) {
+						number1 = Math.floor(number1 * bits / 10) * 10 / bits;
 						bits = bits / 10;
-						if (bits===1)
-						{
+						if (bits === 1) {
 							decimal1 = false;
 						}
 					}
-					else
-					{
-						number1 = Math.Floor(number1 / 10);
+					else {
+						number1 = Math.floor(number1 / 10);
 					}
 				}
 				document.getElementById("t1").innerHTML = number1;
-				operator1=0;
+				operator1 = 0;
 				number2 = 0;
 			}
-			if (order === 2)
-			{
-				if (finish1 === true)
-				{
+			if (order === 2) {
+				if (finish1 === true) {
 					number2 = 0;
 					finish1 = false;
 					document.getElementById("t1").innerHTML = number2;
 				}
-				else
-				{
-					if (number2 === 0)
-					{
+				else {
+					if (number2 === 0) {
 						order = 1;
 						operator1 = 0;
 						document.getElementById("t2").innerHTML = "";
 						document.getElementById("t1").innerHTML = number1;
-						if (number1 %1 != 0)
-						{
+						if (number1 % 1 != 0) {
 							bits = 1;
 							number6 = number1 % 1;
-							while (number6 % 1 != 0)
-							{
+							while (number6 % 1 != 0) {
 								bits = bits * 10;
 								number6 = number6 * 10;
 							}
 						}
 					}
-					else
-					{
-						if (decimal2 === true)
-						{
-							number2 = Math.Floor(number2 * bits / 10) * 10 / bits;
+					else {
+						if (decimal2 === true) {
+							number2 = Math.floor(number2 * bits / 10) * 10 / bits;
 							bits = bits / 10;
-							if (bits === 1)
-							{
+							if (bits === 1) {
 								decimal2 = false;
 							}
 							document.getElementById("t1").innerHTML = number2;
 						}
-						else
-						{
-							number2 = Math.Floor(number2 / 10);
+						else {
+							number2 = Math.floor(number2 / 10);
 							document.getElementById("t1").innerHTML = number2;
 						}
-					}	
+					}
 				}
 			}
 		}
 	</script>
 </head>
+
 <body>
 	<h2 id="t2"></h2>
 	<h1 id="t1">0</h1>
@@ -1500,4 +1243,5 @@
 	<p>历史记录</p>
 	<p id="t3"></p>
 </body>
-</html>	
+
+</html>
