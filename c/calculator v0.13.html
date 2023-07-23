@@ -1159,14 +1159,14 @@
 				}
 				else {
 					if (decimal1 === true) {
-						number1 = Math.floor(number1 * bits / 10) * 10 / bits;
+						number1 = parseInt(number1 * bits / 10) * 10 / bits;
 						bits = bits / 10;
 						if (bits === 1) {
 							decimal1 = false;
 						}
 					}
 					else {
-						number1 = Math.floor(number1 / 10);
+						number1 = parseInt(number1 / 10);
 					}
 				}
 				document.getElementById("t1").innerHTML = number1;
@@ -1196,7 +1196,7 @@
 					}
 					else {
 						if (decimal2 === true) {
-							number2 = Math.floor(number2 * bits / 10) * 10 / bits;
+							number2 = parseInt(number2 * bits / 10) * 10 / bits;
 							bits = bits / 10;
 							if (bits === 1) {
 								decimal2 = false;
@@ -1204,7 +1204,7 @@
 							document.getElementById("t1").innerHTML = number2;
 						}
 						else {
-							number2 = Math.floor(number2 / 10);
+							number2 = parseInt(number2 / 10);
 							document.getElementById("t1").innerHTML = number2;
 						}
 					}
