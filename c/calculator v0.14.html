@@ -5,73 +5,6 @@
 	<meta charset="utf-8" />
 	<title>Calculator</title>
 	<script>
-		function number_inputting() {
-			if (order === 1) {
-				if (number1 < 0) {
-					number3 = -1 * number3;
-				}
-			}
-			else {
-				if (number2 < 0) {
-					number3 = -1 * number3;
-				}
-			}
-			if (order === 1) {
-				if (finish1 === true) {
-					number1 = 0;
-					result_number = 0;
-					bits = 1;
-					decimal1 = false;
-					decimal2 = false;
-					document.getElementById("t1").innerHTML = number1;
-					finish1 = false;
-				}
-				if (decimal1 === false) {
-					number1 = number1 * 10 + number3;
-					document.getElementById("t1").innerHTML = number1;
-				}
-				if (decimal1 === true) {
-					bits = bits * 10;
-					number1 = number3 / bits + number1;
-					document.getElementById("t1").innerHTML = number1;
-				}
-			}
-			if (order === 2) {
-				if (finish2 === true) {
-					finish2 = false;
-					if (operator1 === 4) {
-						document.getElementById("t2").innerHTML = number1 + "÷";
-					}
-					if (operator1 === 3) {
-						document.getElementById("t2").innerHTML = number1 + "×";
-					}
-					if (operator1 === 2) {
-						document.getElementById("t2").innerHTML = number1 + "-";
-					}
-					if (operator1 === 1) {
-						document.getElementById("t2").innerHTML = number1 + "+";
-					}
-				}
-				if (finish1 === true) {
-					finish1 = false;
-					number2 = 0;
-					decimal2 = false;
-					bits = 1;
-					document.getElementById("t1").innerHTML = number2;
-				}
-				if (decimal2 === false) {
-					number2 = number2 * 10 + number3;
-					document.getElementById("t1").innerHTML = number2;
-				}
-				if (decimal2 === true) {
-					bits = bits * 10;
-					number2 = number3 / bits + number2;
-					document.getElementById("t1").innerHTML = number2;
-				}
-			}
-		}
-	</script>
-	<script>
 		var number1 = 0;
 		var number2 = 0;
 		var number3 = 0;
@@ -89,7 +22,7 @@
 
 		function number_0() {
 			number3 = 0;
-
+			number_inputting();
 		}
 
 		function number_1() {
@@ -659,6 +592,77 @@
 		}
 		function history_clean() {
 			document.getElementById("t3").innerHTML = "";
+		}
+	</script>
+	<script>
+		function number_inputting() {
+			if (order === 1) {
+				if (finish1 === true) {
+					number1 = 0;
+					result_number = 0;
+					bits = 1;
+					decimal1 = false;
+					decimal2 = false;
+					document.getElementById("t1").innerHTML = number1;
+					finish1 = false;
+				}
+				pon ();
+				if (decimal1 === false) {
+					number1 = number1 * 10 + number3;
+					document.getElementById("t1").innerHTML = number1;
+				}
+				if (decimal1 === true) {
+					bits = bits * 10;
+					number1 = number3 / bits + number1;
+					document.getElementById("t1").innerHTML = number1;
+				}
+			}
+			if (order === 2) {
+				if (finish2 === true) {
+					finish2 = false;
+					if (operator1 === 4) {
+						document.getElementById("t2").innerHTML = number1 + "÷";
+					}
+					if (operator1 === 3) {
+						document.getElementById("t2").innerHTML = number1 + "×";
+					}
+					if (operator1 === 2) {
+						document.getElementById("t2").innerHTML = number1 + "-";
+					}
+					if (operator1 === 1) {
+						document.getElementById("t2").innerHTML = number1 + "+";
+					}
+				}
+				if (finish1 === true) {
+					finish1 = false;
+					number2 = 0;
+					decimal2 = false;
+					bits = 1;
+					document.getElementById("t1").innerHTML = number2;
+				}
+				pon ();
+				if (decimal2 === false) {
+					number2 = number2 * 10 + number3;
+					document.getElementById("t1").innerHTML = number2;
+				}
+				if (decimal2 === true) {
+					bits = bits * 10;
+					number2 = number3 / bits + number2;
+					document.getElementById("t1").innerHTML = number2;
+				}
+			}
+		}
+		function pon() {//positive or negative.
+			if (order === 1) {
+				if (number1 < 0) {
+					number3 = -1 * number3;
+				}
+			}
+			else {
+				if (number2 < 0) {
+					number3 = -1 * number3;
+				}
+			}
 		}
 	</script>
 </head>
