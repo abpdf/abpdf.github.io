@@ -5,23 +5,7 @@
 	<meta charset="utf-8" />
 	<title>Calculator</title>
 	<script>
-		var number1 = 0;
-		var number2 = 0;
-		var number3 = 0;
-		var finish2 = false;
-		var finish1 = false;
-		var order = 1;
-		var bits = 1;
-		var decimal1 = false;
-		var decimal2 = false;
-		var operator1 = 0;
-		var result_number = 0;
-		var number4;
-		var number5;
-		var number6;
-
-		function number_0() {
-			number3 = 0;
+		function number_inputting (){
 			if (order === 1) {
 				if (number1 < 0) {
 					number3 = -1 * number3;
@@ -85,6 +69,27 @@
 					document.getElementById("t1").innerHTML = number2;
 				}
 			}
+		}
+	</script>
+	<script>
+		var number1 = 0;
+		var number2 = 0;
+		var number3 = 0;
+		var finish2 = false;
+		var finish1 = false;
+		var order = 1;
+		var bits = 1;
+		var decimal1 = false;
+		var decimal2 = false;
+		var operator1 = 0;
+		var result_number = 0;
+		var number4;
+		var number5;
+		var number6;
+
+		function number_0() {
+			number3 = 0;
+			number_inputting();
 		}
 
 		function number_1() {
