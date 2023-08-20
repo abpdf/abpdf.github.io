@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="user-scalable=no" />
-    <script>
-      function number(a){
-        
-      }
-    </script>
-  </head>
-  <body>
-    <table>
-      <tr>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>
-          <button onclick="number (0)">0</button>
-        </td>
-        <td>
-          <button onclick="number (1)">1</button>
-        </td>
-        <td>
-          <button onclick="number (2)">2</button>
-        </td>
-        <td>
-          <button onclick="number (3)">3</button>
-        </td>
-        <td>
-          <button onclick="number (4)">4</button>
-        </td>
-        <td>
-          <button onclick="number (5)">5</button>
-        </td>
-        <td>
-          <button onclick="number (6)">6</button>
-        </td>
-        <td>
-          <button onclick="number (7)">7</button>
-        </td>
-        <td>
-          <button onclick="number (8)">8</button>
-        </td>
-        <td>
-          <button onclick="number (9)">9</button>
-        </td>
-      </tr>
-    </table>
-  </body>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<script>
+		function input(a) {
+			document.getElementById("p").innerHTML += a;
+		}
+	</script>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<p id="p"></p>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				<button onclick="input (0)">0</button>
+			</td>
+			<td>
+				<button onclick="input (1)">1</button>
+			</td>
+			<td>
+				<button onclick="input (2)">2</button>
+			</td>
+			<td>
+				<button onclick="input (3)">3</button>
+			</td>
+			<td>
+				<button onclick="input (4)">4</button>
+			</td>
+			<td>
+				<button onclick="input (5)">5</button>
+			</td>
+			<td>
+				<button onclick="input (6)">6</button>
+			</td>
+			<td>
+				<button onclick="input (7)">7</button>
+			</td>
+			<td>
+				<button onclick="input (8)">8</button>
+			</td>
+			<td>
+				<button onclick="input (9)">9</button>
+			</td>
+		</tr>
+	</table>
+</body>
+
 </html>
