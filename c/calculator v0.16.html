@@ -672,8 +672,16 @@
 					number_9 ();
 					break;
 				default:
+					switch (event.keyCode){
+						case  8:
+							return_button();
+							break;
+						default:
+							break;
+					}
 					break;
 			}
+			
 		}
 		window.addEventListener("keydown", handleKeyPress);
 	</script>
