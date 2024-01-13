@@ -1,11 +1,53 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- </head>
- <body>
-    
- </body>
- </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Document</title>
+   <script>
+      function read() {
+         var number1 = document.getElementById('n').value;
+         var i;
+         var g;
+         var h;
+         var number2 = new Array();
+         number2[0] = 1;
+         if (number1 < 0) {
+            alert("请输入一个正数");
+         } else {
+            if ((number1 % 1) != 0) {
+               alert("请输入一个整数");
+            } else {
+               for (i = 1; i <= number1; i++) {
+                  for (g = 0; g < number2.length; g++) {
+                     number2[g] = number2[g] * i;
+                  }
+                  for (h = 0; h < number2.length; h++)
+                  {
+                     while (number2[h] >= 10) {
+                        if(number2[h + 1]===undefined){
+                           number2[h + 1]=0
+                        }
+                        number2[h + 1] = number2[h + 1]+1;
+                        number2[h] = number2[h]-10;
+                     }
+                  }
+               }
+               for (i = number2.length; i >= 0; i = i - 1) {
+                  document.write(number2[i]);
+               }
+            }
+         }
+      }
+   </script>
+</head>
+
+<body>
+   <label for="n">
+      <input type="number" id="n" value="" minlength="1" />
+   </label>
+   <button onclick="read ()">计算</button>
+</body>
+
+</html>
