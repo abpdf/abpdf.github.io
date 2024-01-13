@@ -23,18 +23,19 @@
                   for (g = 0; g < number2.length; g++) {
                      number2[g] = number2[g] * i;
                   }
-                  for (h = 0; h < number2.length; h++)
-                  {
+                  for (h = 0; h < number2.length; h++) {
                      while (number2[h] >= 10) {
-                        if(number2[h + 1]===undefined){
-                           number2[h + 1]=0
+                        if (number2[h + 1] === undefined) {
+                           number2[h + 1] = 0
                         }
-                        number2[h + 1] = number2[h + 1]+1;
-                        number2[h] = number2[h]-10;
+                        number2[h + 1] = number2[h + 1] + 1;
+                        number2[h] = number2[h] - 10;
                      }
                   }
+                  document.write("进度：" + i + "/" + number1);
                }
-               for (i = number2.length; i >= 0; i = i - 1) {
+               document.write(number1 + "!=");
+               for (i = number2.length - 1; i >= 0; i = i - 1) {
                   document.write(number2[i]);
                }
             }
