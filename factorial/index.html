@@ -19,6 +19,7 @@
             if ((number1 % 1) != 0) {
                alert("请输入一个整数");
             } else {
+               var a = Date.now();
                for (i = 1; i <= number1; i++) {
                   for (g = 0; g < number2.length; g++) {
                      number2[g] = number2[g] * i;
@@ -33,10 +34,13 @@
                      }
                   }
                }
-               document.write(number1 + "!=");
+               document.write("<p style='word-break: break-all'>" + number1 + "!=");
                for (i = number2.length - 1; i >= 0; i = i - 1) {
                   document.write(number2[i]);
                }
+               document.write("</p>");
+               var b = Date.now();
+               alert("计算成功，共用时"+((b-a)/1000)+"秒");
             }
          }
       }
