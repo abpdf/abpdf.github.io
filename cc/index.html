@@ -5,10 +5,23 @@
 	<title></title>
 	<meta charset="utf-8" />
 	<script>
+		var order = 1;
+		var bit = 0;
+		var number = new Array();
+		number[1] = new Array();
+		number[2] = new Array();
 		function input(a) {
+			number[order][bit] = a;
+			bit += 1;
 			document.getElementById("p").innerHTML += a;
 		}
 	</script>
+	<style>
+		button{
+			width: 40.5px;
+			height: 25px;
+		}
+	</style>
 </head>
 
 <body>
@@ -19,36 +32,31 @@
 	</table>
 	<table>
 		<tr>
-			<td>
-				<button onclick="input (0)">0</button>
-			</td>
-			<td>
-				<button onclick="input (1)">1</button>
-			</td>
-			<td>
-				<button onclick="input (2)">2</button>
-			</td>
-			<td>
-				<button onclick="input (3)">3</button>
-			</td>
-			<td>
-				<button onclick="input (4)">4</button>
-			</td>
-			<td>
-				<button onclick="input (5)">5</button>
-			</td>
-			<td>
-				<button onclick="input (6)">6</button>
-			</td>
-			<td>
-				<button onclick="input (7)">7</button>
-			</td>
-			<td>
-				<button onclick="input (8)">8</button>
-			</td>
-			<td>
-				<button onclick="input (9)">9</button>
-			</td>
+			<td><button onclick="percent_button ()">%</button></td>
+			<td><button onclick="ce_button ()">CE</button></td>
+			<td><button onclick="c_button ()">C</button></td>
+			<td><button onclick="return_button ()" class="small">Backspace</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input (7)">7</button>
+			<td><button onclick="input (8)">8</button></td>
+			<td><button onclick="input (9)">9</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input (4)">4</button></td>
+			<td><button onclick="input (5)">5</button></td>
+			<td><button onclick="input (6)">6</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input (1)">1</button></td>
+			<td><button onclick="input (2)">2</button></td>
+			<td><button onclick="input (3)">3</button></td>
+		</tr>
+		<tr>
+			<td><button onclick=""><sup>+</sup>/<sub>-</sub></button></td>
+			<td><button onclick="input (0)">0</button></td>
+			<td><button onclick="">.</button></td>
+			<td><button onclick="">=</button></td>
 		</tr>
 	</table>
 </body>
