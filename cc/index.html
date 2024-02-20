@@ -16,8 +16,10 @@
 			bit += 1;
 			document.getElementById("p").innerHTML += a;
 		}
-		function operator() {
-
+		function operator(b) {
+			order = 2;
+			bit = 0;
+			operator1 = b;
 		}
 	</script>
 	<style>
@@ -49,25 +51,25 @@
 			<td><button onclick=""><sup>1</sup>/<sub>x</sub></button></td>
 			<td><button onclick="">x<sup>2</sup></button></td>
 			<td><button onclick=""><sup>2</sup>√x</button></td>
-			<td><button onclick="">/</button></td>
+			<td><button onclick="operator(4)">/</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (7)">7</button>
 			<td><button onclick="input (8)">8</button></td>
 			<td><button onclick="input (9)">9</button></td>
-			<td><button onclick="">*</button></td>
+			<td><button onclick="operator(3)">*</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (4)">4</button></td>
 			<td><button onclick="input (5)">5</button></td>
 			<td><button onclick="input (6)">6</button></td>
-			<td><button onclick="">-</button></td>
+			<td><button onclick="operator(2)">-</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (1)">1</button></td>
 			<td><button onclick="input (2)">2</button></td>
 			<td><button onclick="input (3)">3</button></td>
-			<td><button onclick="">+</button></td>
+			<td><button onclick="operator(1)">+</button></td>
 		</tr>
 		<tr>
 			<td><button onclick=""><sup>+</sup>/<sub>-</sub></button></td>
