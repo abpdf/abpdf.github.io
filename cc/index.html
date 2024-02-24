@@ -12,14 +12,14 @@
 		var operator1 = "";
 		function input(a) {
 			number[order].push(a);
-			document.getElementById("p").innerHTML += a;
+			output();
 		}
 		function operator(b) {
 			order = 2;
 			operator1 = b;
 		}
 		function output() {
-			document.getElementById("p").innerHTML = number[1].join("") + (order = 1) ? "" : (operator1 + number[2].join(""));
+			document.getElementById("p").innerHTML = number[1].join("") + (order === 1 ? "" : operator1 + number[2].join(""));
 		}
 	</script>
 	<style>
