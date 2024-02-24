@@ -9,7 +9,7 @@
 		var number = new Array();
 		number[1] = new Array();
 		number[2] = new Array();
-		var operator1 = 0;
+		var operator1 = "";
 		function input(a) {
 			number[order].push(a);
 			document.getElementById("p").innerHTML += a;
@@ -17,6 +17,9 @@
 		function operator(b) {
 			order = 2;
 			operator1 = b;
+		}
+		function output() {
+			document.getElementById("p").innerHTML = number[1].join("") + (order = 1) ? "" : (operator1 + number[2].join(""));
 		}
 	</script>
 	<style>
@@ -34,7 +37,9 @@
 <body>
 	<table>
 		<tr>
-			<td><h1 id="p"></h1></td>
+			<td>
+				<h1 id="p"></h1>
+			</td>
 		</tr>
 	</table>
 	<table>
@@ -48,25 +53,25 @@
 			<td><button onclick=""><sup>1</sup>/<sub>x</sub></button></td>
 			<td><button onclick="">x<sup>2</sup></button></td>
 			<td><button onclick=""><sup>2</sup>√x</button></td>
-			<td><button onclick="operator(4)">/</button></td>
+			<td><button onclick="operator('/')">/</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (7)">7</button>
 			<td><button onclick="input (8)">8</button></td>
 			<td><button onclick="input (9)">9</button></td>
-			<td><button onclick="operator(3)">*</button></td>
+			<td><button onclick="operator('*')">*</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (4)">4</button></td>
 			<td><button onclick="input (5)">5</button></td>
 			<td><button onclick="input (6)">6</button></td>
-			<td><button onclick="operator(2)">-</button></td>
+			<td><button onclick="operator('-')">-</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (1)">1</button></td>
 			<td><button onclick="input (2)">2</button></td>
 			<td><button onclick="input (3)">3</button></td>
-			<td><button onclick="operator(1)">+</button></td>
+			<td><button onclick="operator('+')">+</button></td>
 		</tr>
 		<tr>
 			<td><button onclick=""><sup>+</sup>/<sub>-</sub></button></td>
