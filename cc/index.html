@@ -31,11 +31,12 @@
 			document.getElementById("p").innerHTML = number[1].join("") + (order === 1 ? "" : operator1 + number[2].join(""));
 		}
 		function equal() {
-			if (operate === 0) { }
-			if (operate === 1) { }
-			if (operate === 2) { }
-			if (operate === 3) { }
-			if (operate === 4) { }
+			if (operate === 0) { output(); }
+			if (operate === 1) { addition(); output(); number[1] = number[3]; }
+			if (operate === 2) { subtraction(); output(); number[1] = number[3]; }
+			if (operate === 3) { multiplication(); output(); number[1] = number[3]; }
+			if (operate === 4) { division; output(); number[1] = number[3]; }
+			document.getElementById("p").innerHTML += ("=" + number[3].join(""));
 		}
 		function addition() {
 
