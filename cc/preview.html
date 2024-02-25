@@ -47,9 +47,7 @@
 		}
 		function addition() {
 			var bits = number[1].length <= number[2].length ? number[2].length : number[1].length;
-			number[1].length = bits;
-			number[2].length = bits;
-			for (var i = bits - 1; i >= 0; i--) {
+			for (var i = 0; i < bits; i++) {
 				number[3][i] = ((number[1][i] === undefined) ? 0 : number[1][i]) + ((number[2][i] === undefined) ? 0 : number[2][i]);
 			}
 			for (var i = bits - 1; i >= 0; i--) {
