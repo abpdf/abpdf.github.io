@@ -31,15 +31,26 @@
 			document.getElementById("p").innerHTML = number[1].join("") + (order === 1 ? "" : operator1 + number[2].join(""));
 		}
 		function equal() {
+			number[3] = [];
 			if (operate === 0) { output(); }
 			if (operate === 1) { addition(); output(); number[1] = number[3]; }
 			if (operate === 2) { subtraction(); output(); number[1] = number[3]; }
 			if (operate === 3) { multiplication(); output(); number[1] = number[3]; }
 			if (operate === 4) { division; output(); number[1] = number[3]; }
+			optimize(3);
 			document.getElementById("p").innerHTML += ("=" + number[3].join(""));
 		}
 		function addition() {
-
+			var bits = number[1].length <= number[2].length ? number[2].length : number[1].length;
+			number[1].length = bits;
+			number[2].length = bits;
+			for (var i = bits - 1; i >= 0; i--) { number[3][i] = number[1][i] + number[2][i]; }
+			for (var i = bits - 1; i >= 0; i--) {
+				while (number[i] >= 10) {
+					number[i + 1] += 1;
+					number[i] -= 10;
+				}
+			}
 		}
 		function subtraction() {
 
@@ -49,6 +60,10 @@
 		}
 		function division() {
 
+		}
+		function optimize(a) {
+			transfer = number[a];
+			for (; transfer.shift() === 0;) { number[a] = transfer; }
 		}
 		function C() {
 			order = 1;

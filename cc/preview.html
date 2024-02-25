@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<script>
+		var order = 1;
+		var number = new Array();
+		number[1] = new Array();
+		number[2] = new Array();
+		number[3] = new Array();
+		var transfer = new Array();
+		var operate = 0;
+		var operator1 = "";
+		function input(a) {
+			transfer = number[order];
+			transfer.unshift(a);
+			number[order] = transfer;
+			output();
+		}
+		function operator(a, b) {
+			order = 2;
+			operate = a;
+			operator1 = b;
+			number[2] = [];
+			number[3] = [];
+			output();
+		}
+		function output() {
+			transfer = number[1];
+			document.getElementById("p").innerHTML = transfer.reverse().join("");
+			transfer = number[2];
+			document.getElementById("p").innerHTML += (order === 1 ? "" : operator1 + transfer.reverse().join(""));
+		}
+		function equal() {
+			number[3] = [];
+			if (operate === 0) { number[3]=number[1]; }
+			if (operate === 1) { addition(); output(); number[1] = number[3]; }
+			if (operate === 2) { subtraction(); output(); number[1] = number[3]; }
+			if (operate === 3) { multiplication(); output(); number[1] = number[3]; }
+			if (operate === 4) { division; output(); number[1] = number[3]; }
+			optimize(3);
+			output();
+			transfer=number[3];
+			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("");
+		}
+		function addition() {
+			var bits = number[1].length <= number[2].length ? number[2].length : number[1].length;
+			number[1].length = bits;
+			number[2].length = bits;
+			for (var i = bits - 1; i >= 0; i--) {
+				number[3][i] = ((number[1][i] === undefined) ? 0 : number[1][i]) + ((number[2][i] === undefined) ? 0 : number[2][i]);
+			}
+			for (var i = bits - 1; i >= 0; i--) {
+				while (number[i] >= 10) {
+					number[i + 1] = 1;
+					number[i] -= 10;
+				}
+			}
+		}
+		function subtraction() {
+
+		}
+		function multiplication() {
+
+		}
+		function division() {
+
+		}
+		function optimize(a) {
+			transfer = number[a];
+			while (transfer.shift() === 0) {
+				number[a] = transfer;
+			}
+		}
+		function C() {
+			order = 1;
+			number[1] = [];
+			number[2] = [];
+			number[3] = [];
+			operate = 0;
+			operator1 = "";
+			output();
+		}
+	</script>
+	<style>
+		button {
+			width: 56.6px;
+			height: 35px;
+		}
+
+		.small {
+			font-size: 9px;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<h1 id="p"></h1>
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><button onclick="">%</button></td>
+			<td><button onclick="">CE</button></td>
+			<td><button onclick="C ()">C</button></td>
+			<td><button onclick="" class="small">Backspace</button></td>
+		</tr>
+		<tr>
+			<td><button onclick=""><sup>1</sup>/<sub>x</sub></button></td>
+			<td><button onclick="">x<sup>2</sup></button></td>
+			<td><button onclick=""><sup>2</sup>√x</button></td>
+			<td><button onclick="operator(4,'/')">/</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input (7)">7</button>
+			<td><button onclick="input (8)">8</button></td>
+			<td><button onclick="input (9)">9</button></td>
+			<td><button onclick="operator(3,'*')">*</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input (4)">4</button></td>
+			<td><button onclick="input (5)">5</button></td>
+			<td><button onclick="input (6)">6</button></td>
+			<td><button onclick="operator(2,'-')">-</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input (1)">1</button></td>
+			<td><button onclick="input (2)">2</button></td>
+			<td><button onclick="input (3)">3</button></td>
+			<td><button onclick="operator(1,'+')">+</button></td>
+		</tr>
+		<tr>
+			<td><button onclick=""><sup>+</sup>/<sub>-</sub></button></td>
+			<td><button onclick="input (0)">0</button></td>
+			<td><button onclick="">.</button></td>
+			<td><button onclick="equal ()">=</button></td>
+		</tr>
+	</table>
+</body>
+
+</html>
