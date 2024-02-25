@@ -9,21 +9,54 @@
 		var number = new Array();
 		number[1] = new Array();
 		number[2] = new Array();
+		number[3] = new Array();
+		var transfer = new Array();
+		var operate = 0;
 		var operator1 = "";
 		function input(a) {
-			number[order].push(a);
+			transfer = number[order];
+			transfer.push(a);
+			number[order] = transfer;
 			output();
 		}
-		function operator(b) {
+		function operator(a, b) {
 			order = 2;
+			operate = a;
 			operator1 = b;
+			number[2] = [];
+			number[3] = [];
 			output();
 		}
 		function output() {
 			document.getElementById("p").innerHTML = number[1].join("") + (order === 1 ? "" : operator1 + number[2].join(""));
 		}
 		function equal() {
+			if (operate === 0) { }
+			if (operate === 1) { }
+			if (operate === 2) { }
+			if (operate === 3) { }
+			if (operate === 4) { }
+		}
+		function addition() {
 
+		}
+		function subtraction() {
+
+		}
+		function multiplication() {
+
+		}
+		function division() {
+
+		}
+		function C() {
+			order = 1;
+			number[1] = [];
+			number[2] = [];
+			number[3] = [];
+			operate = 0;
+			operator1 = "";
+			output();
 		}
 	</script>
 	<style>
@@ -50,32 +83,32 @@
 		<tr>
 			<td><button onclick="">%</button></td>
 			<td><button onclick="">CE</button></td>
-			<td><button onclick="">C</button></td>
+			<td><button onclick="C ()">C</button></td>
 			<td><button onclick="" class="small">Backspace</button></td>
 		</tr>
 		<tr>
 			<td><button onclick=""><sup>1</sup>/<sub>x</sub></button></td>
 			<td><button onclick="">x<sup>2</sup></button></td>
 			<td><button onclick=""><sup>2</sup>√x</button></td>
-			<td><button onclick="operator('/')">/</button></td>
+			<td><button onclick="operator(4,'/')">/</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (7)">7</button>
 			<td><button onclick="input (8)">8</button></td>
 			<td><button onclick="input (9)">9</button></td>
-			<td><button onclick="operator('*')">*</button></td>
+			<td><button onclick="operator(3,'*')">*</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (4)">4</button></td>
 			<td><button onclick="input (5)">5</button></td>
 			<td><button onclick="input (6)">6</button></td>
-			<td><button onclick="operator('-')">-</button></td>
+			<td><button onclick="operator(2,'-')">-</button></td>
 		</tr>
 		<tr>
 			<td><button onclick="input (1)">1</button></td>
 			<td><button onclick="input (2)">2</button></td>
 			<td><button onclick="input (3)">3</button></td>
-			<td><button onclick="operator('+')">+</button></td>
+			<td><button onclick="operator(1,'+')">+</button></td>
 		</tr>
 		<tr>
 			<td><button onclick=""><sup>+</sup>/<sub>-</sub></button></td>
