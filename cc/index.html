@@ -17,6 +17,7 @@
 		function operator(b) {
 			order = 2;
 			operator1 = b;
+			output();
 		}
 		function output() {
 			document.getElementById("p").innerHTML = number[1].join("") + (order === 1 ? "" : operator1 + number[2].join(""));
