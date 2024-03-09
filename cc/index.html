@@ -10,6 +10,9 @@
 		number[1] = new Array();
 		number[2] = new Array();
 		number[3] = new Array();
+		plus_minus = new Array();//1 for positive and -1 for negative.
+		var isDecimal = new Array();
+		var decimalPart = new Array();
 		var transfer = new Array();//中转
 		var operate = 0;
 		var operator1 = "";
@@ -71,6 +74,8 @@
 			while (transfer.pop() === 0) {
 				number[a] = transfer.concat([]);
 			}
+		}
+		function positive_or_negative() {
 		}
 		function C() {
 			order = 1;
@@ -134,7 +139,7 @@
 			<td><button onclick="operator(1,'+')">+</button></td>
 		</tr>
 		<tr>
-			<td><button onclick=""><sup>+</sup>/<sub>-</sub></button></td>
+			<td><button onclick="positive_or_negative ()"><sup>+</sup>/<sub>-</sub></button></td>
 			<td><button onclick="input (0)">0</button></td>
 			<td><button onclick="">.</button></td>
 			<td><button onclick="equal ()">=</button></td>
