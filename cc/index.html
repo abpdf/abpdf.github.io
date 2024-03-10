@@ -8,36 +8,51 @@
 		var order = 1;
 		var number = new Array();
 		number[1] = new Array();
+		number[1][0] = new Array();
+		number[1][1] = new Array();
 		number[2] = new Array();
+		number[2][0] = new Array();
+		number[2][1] = new Array();
 		number[3] = new Array();
-		plus_minus = new Array();//1 for positive and -1 for negative.
-		var isDecimal = new Array();
-		var decimalPart = new Array();
+		number[3][0] = new Array();
+		number[3][1] = new Array();
+		var plusOrMinus = new Array();//1 for positive and -1 for negative.
+		plusOrMinus[1] = 1;
+		plusOrMinus[2] = 1;
+		plusOrMinus[3] = 1;
+		var isDecimal = new Array();//0 for integer and 1 for decimal.
+		isDecimal[1] = 0;
+		isDecimal[2] = 0;
+		isDecimal[3] = 0;
 		var transfer = new Array();//中转
 		var operate = 0;
 		var operator1 = "";
 		function input(a) {
-			transfer = number[order].concat([]);
-			transfer.unshift(a);
-			number[order] = transfer.concat([]);
+			transfer = number[order][isDecimal[order]].concat([]);
+			isDecimal[order] === 0 ? transfer.unshift(a) : transfer.push(a);
+			number[order][isDecimal[order]] = transfer.concat([]);
 			output();
 		}
 		function operator(a, b) {
 			order = 2;
 			operate = a;
 			operator1 = b;
-			number[2] = [];
-			number[3] = [];
+			number[2][0] = [];
+			number[2][1] = [];
+			number[3][0] = [];
+			number[3][1] = [];
 			output();
 		}
 		function output() {
-			transfer = number[1].concat([]);
-			document.getElementById("p").innerHTML = transfer.reverse().join("");
-			transfer = number[2].concat([]);
-			document.getElementById("p").innerHTML += (order === 1 ? "" : operator1 + transfer.reverse().join(""));
+			transfer = number[1][0].concat([]);
+			document.getElementById("p").innerHTML = transfer.reverse().join("") + (isDecimal[1] === 0 ? "" : ("." + number[1][1].join("")));
+			transfer = number[2][0].concat([]);
+			document.getElementById("p").innerHTML += (order === 1 ? "" : (operator1 + transfer.reverse().join("") + (isDecimal[2] === 0 ? "" : ("." + number[2][1].join("")))));
 		}
 		function equal() {
-			number[3] = [];
+			number[3][0] = [];
+			number[3][1] = [];
+			if (operate === 0) { number[3][1] = number[1][1].concat([]); number[3][0] = number[1][0].concat([]); }
 			if (operate === 1) { addition(); }
 			if (operate === 2) { subtraction(); }
 			if (operate === 3) { multiplication(); }
@@ -45,8 +60,8 @@
 			optimize(3);
 			output();
 			number[1] = number[3].concat([]);
-			transfer = number[3].concat([]);
-			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("");
+			transfer = number[3][0].concat([]);
+			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("") + (isDecimal[3] === 0 ? "" : ("." + number[3][1].join("")));
 		}
 		function addition() {
 			var bits = number[1].length <= number[2].length ? number[2].length : number[1].length;
@@ -70,20 +85,37 @@
 
 		}
 		function optimize(a) {
-			transfer = number[a].concat([]);
+			transfer = number[a][0].concat([]);
 			while (transfer.pop() === 0) {
-				number[a] = transfer.concat([]);
+				number[a][0] = transfer.concat([]);
+			}
+			transfer = number[a][1].concat([]);
+			while (transfer.pop() === 0) {
+				number[a][1] = transfer.concat([]);
 			}
 		}
 		function positive_or_negative() {
 		}
 		function C() {
 			order = 1;
-			number[1] = [];
-			number[2] = [];
-			number[3] = [];
+			number[1][0] = [];
+			number[1][1] = [];
+			number[2][0] = [];
+			number[2][1] = [];
+			number[3][0] = [];
+			number[3][1] = [];
+			plusOrMinus[1] = 1;
+			plusOrMinus[2] = 1;
+			plusOrMinus[3] = 1;
+			isDecimal[1] = 0;
+			isDecimal[2] = 0;
+			isDecimal[3] = 0;
 			operate = 0;
 			operator1 = "";
+			output();
+		}
+		function decimalPoint() {
+			isDecimal[order] = 1;
 			output();
 		}
 	</script>
@@ -141,7 +173,7 @@
 		<tr>
 			<td><button onclick="positive_or_negative ()"><sup>+</sup>/<sub>-</sub></button></td>
 			<td><button onclick="input (0)">0</button></td>
-			<td><button onclick="">.</button></td>
+			<td><button onclick="decimalPoint ()">.</button></td>
 			<td><button onclick="equal ()">=</button></td>
 		</tr>
 	</table>
