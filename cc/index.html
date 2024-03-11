@@ -61,7 +61,8 @@
 			output();
 			number[1] = number[3].concat([]);
 			transfer = number[3][0].concat([]);
-			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("") + (isDecimal[3] === 0 ? "" : ("." + number[3][1].join("")));
+			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("");
+			document.getElementById("p").innerHTML += isDecimal[3] === 0 ? "" : ("." + number[3][1].join(""));
 		}
 		function addition() {
 			var bits = number[1].length <= number[2].length ? number[2].length : number[1].length;
