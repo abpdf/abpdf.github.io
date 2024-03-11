@@ -62,6 +62,7 @@
 			number[1] = number[3].concat([]);
 			transfer = number[3][0].concat([]);
 			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("");
+			transfer = number[3][1].concat([]);
 			document.getElementById("p").innerHTML += isDecimal[3] === 0 ? "" : ("." + number[3][1].join(""));
 		}
 		function addition() {
