@@ -64,7 +64,7 @@
 			transfer = number[3][0].concat([]);
 			document.getElementById("p").innerHTML += "=" + transfer.reverse().join("");
 			transfer = number[3][1].concat([]);
-			document.getElementById("p").innerHTML += (transfer === empty1 ? "" : ("." + transfer.join("")));
+			document.getElementById("p").innerHTML += (transfer.join("") === "" ? "" : ("." + transfer.join("")));
 		}
 		function addition() {
 			var bits = number[1].length <= number[2].length ? number[2].length : number[1].length;
