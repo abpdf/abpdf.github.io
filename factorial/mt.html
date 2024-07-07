@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<script>
+		let mt = new Worker('mt.js');
+		function read() {
+			mt.postMessage(document.getElementById('n').value);
+		}
+	</script>
+</head>
+
+<body>
+	<label for="n">
+		<input type="number" id="n" value="" minlength="1" />
+	</label>
+	<button onclick="read ()">计算</button>
+</body>
+
+</html>
