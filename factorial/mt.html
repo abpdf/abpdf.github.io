@@ -6,9 +6,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Document</title>
 	<script>
-		let mt = new Worker('mt.js');
+		var number1;
+		const mt = new Worker('mt.js');
 		function read() {
-			mt.postMessage(document.getElementById('n').value);
+			number1 = document.getElementById('n').value;
+			mt.postMessage(number1);
+			var a = Date.now();
+		}
+		mt.onmessage = function (number2) {
+			document.write("<p style='word-break: break-all'>" + number1 + "!=");
+			document.write(number2[number2.length - 1]);
+			for (i = number2.length - 2; i >= 0; i = i - 1) {
+				if (number2[i] >= 100) {
+					document.write(number2[i]);
+				}
+				else {
+					if (number2[i] >= 10) {
+						document.write("0" + number2[i]);
+					}
+					else {
+						document.write("00" + number2[i]);
+					}
+				}
+			}
+			document.write("</p>");
+			var b = Date.now();
+			alert("计算成功，共用时" + ((b - a) / 1000) + "秒");
 		}
 	</script>
 </head>
