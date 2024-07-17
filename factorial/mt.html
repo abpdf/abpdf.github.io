@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Document</title>
 	<script>
+		var a;
 		var number1;
 		const mt = new Worker('mt.js');
 		function read() {
 			number1 = document.getElementById('n').value;
 			mt.postMessage(number1);
-			var a = Date.now();
+			a = Date.now();
 		}
 		mt.onmessage = function (number2) {
 			document.write("<p style='word-break: break-all'>" + number1 + "!=");
