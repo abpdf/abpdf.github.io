@@ -6,7 +6,6 @@ self.onmessage = function (data2) {
    var h;
    var number2 = new Array();
    number2[0] = 1;
-   if (number1 >= 0 && (number1 % 1) === 0) {
       for (i = 1; i <= number1; i++) {
          for (g = 0; g < number2.length; g++) {
             number2[g] = number2[g] * i;
@@ -21,6 +20,5 @@ self.onmessage = function (data2) {
             }
          }
       }
-   }
    postMessage(number2);
 }
