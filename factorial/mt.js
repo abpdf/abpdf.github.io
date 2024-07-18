@@ -21,5 +21,5 @@ self.onmessage = function (number1) {
          }
       }
    }
-   self.postMessage(number2);
+   postMessage(number2);
 }
