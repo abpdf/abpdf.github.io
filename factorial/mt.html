@@ -15,7 +15,8 @@
 			mt.postMessage(number1);
 			a = Date.now();
 		}
-		mt.onmessage = function m(number2) {
+		mt.onmessage = function m(data1) {
+			number2 = data1.data;
 			document.write("<p style='word-break: break-all'>" + number1 + "!=");
 			document.write(number2[number2.length - 1]);
 			for (i = number2.length - 2; i >= 0; i = i - 1) {

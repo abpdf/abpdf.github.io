@@ -1,5 +1,4 @@
 self.onmessage = function (number1) {
-
    var i;
    var g;
    var h;
