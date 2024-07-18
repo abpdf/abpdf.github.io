@@ -19,6 +19,7 @@ self.onmessage = function (data2) {
                number2[h] = number2[h] - 1000;
             }
          }
+         postMessage(i);
       }
    postMessage(number2);
 }
