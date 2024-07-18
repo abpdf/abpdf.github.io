@@ -1,4 +1,6 @@
-self.onmessage = function (number1) {
+self.onmessage = function (data2) {
+   var number1;
+   number1=data2.data;
    var i;
    var g;
    var h;
