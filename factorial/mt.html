@@ -14,32 +14,36 @@
 			number1 = document.getElementById('n').value;
 			if (number1 >= 0 && (number1 % 1) === 0) {
 				mt.postMessage(number1);
-				document.getElementById("b").innerHTML="正在计算……";
+				document.getElementById("b").innerHTML = "正在计算……";
 				a = Date.now();
 			} else {
 				alert("请输入正整数。");
 			}
 		}
 		mt.onmessage = function m(data1) {
-			number2 = data1.data;
-			document.write("<p style='word-break: break-all'>" + number1 + "!=");
-			document.write(number2[number2.length - 1]);
-			for (i = number2.length - 2; i >= 0; i = i - 1) {
-				if (number2[i] >= 100) {
-					document.write(number2[i]);
-				}
-				else {
-					if (number2[i] >= 10) {
-						document.write("0" + number2[i]);
+			if (data1.data instanceof Array) {
+				number2 = data1.data;
+				document.write("<p style='word-break: break-all'>" + number1 + "!=");
+				document.write(number2[number2.length - 1]);
+				for (i = number2.length - 2; i >= 0; i = i - 1) {
+					if (number2[i] >= 100) {
+						document.write(number2[i]);
 					}
 					else {
-						document.write("00" + number2[i]);
+						if (number2[i] >= 10) {
+							document.write("0" + number2[i]);
+						}
+						else {
+							document.write("00" + number2[i]);
+						}
 					}
 				}
+				document.write("</p>");
+				var b = Date.now();
+				alert("计算成功，共用时" + ((b - a) / 1000) + "秒");
+			} else {
+				document.getElementById('b').innerHTML = "正在计算中："+data1.data+"/"+number1;
 			}
-			document.write("</p>");
-			var b = Date.now();
-			alert("计算成功，共用时" + ((b - a) / 1000) + "秒");
 		}
 	</script>
 </head>
