@@ -42,17 +42,19 @@
 				var b = Date.now();
 				alert("计算成功，共用时" + ((b - a) / 1000) + "秒");
 			} else {
-				document.getElementById('b').innerHTML = "正在计算中："+data1.data+"/"+number1;
+				document.getElementById('b').innerHTML = "正在计算中：" + data1.data + "/" + number1;
 			}
 		}
 	</script>
 </head>
 
-<body id="b">
-	<label for="n">
-		<input type="number" id="n" value="" minlength="1" />
-	</label>
-	<button onclick="read ()">计算</button>
+<body>
+	<div id="b">
+		<label for="n">
+			<input type="number" id="n" value="" minlength="1" />
+		</label>
+		<button onclick="read ()">计算</button>
+	</div>
 </body>
 
 </html>
