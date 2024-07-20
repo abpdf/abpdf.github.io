@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>大整数阶乘计算器</title>  
+</head>  
+<body>  
+    <h2>大整数阶乘计算器</h2>  
+    <input type="number" id="numberInput" placeholder="输入一个整数">  
+    <button onclick="calculateFactorial()">计算阶乘</button>  
+    <p>结果: <span id="result">---</span></p>  
+    <p>所用时间: <span id="timeTaken">---</span> 毫秒</p>  
+  
+    <script>  
+        function calculateFactorial() {  
+            const num = parseInt(document.getElementById('numberInput').value);  
+            if (isNaN(num) || num < 0) {  
+                alert("请输入一个有效的非负整数");  
+                return;  
+            }  
+  
+            const startTime = new Date();  
+            let result = 1n; // 使用BigInt来处理大整数  
+            for (let i = 2n; i <= BigInt(num); i++) {  
+                result *= i;  
+            }  
+            const endTime = new Date();  
+            const timeTaken = endTime - startTime;  
+  
+            document.getElementById('result').textContent = result.toString();  
+            document.getElementById('timeTaken').textContent = timeTaken;  
+        }  
+    </script>  
+</body>  
+</html>
