@@ -19,7 +19,7 @@
             mt.postMessage(num);
         }
         mt.onmessage = function (data1) {
-            if (data1.data < BigInt(num)) {
+            if (data1.data <= BigInt(num)) {
                 document.getElementById('b').innerHTML = "正在计算中：" + data1.data + "/" + num.toString();
             } else {
                 const endTime = new Date();
