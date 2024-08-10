@@ -6,17 +6,18 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Document</title>
    <script>
+      var a;
       var number1;
       var number3;
       var number2 = new Array();
       const mt = new Worker('mt.js');
       function read() {
-         var number1 = document.getElementById('n').value;
-         var number3 = document.getElementById('o').value;
+         number1 = document.getElementById('n').value;
+         number3 = document.getElementById('o').value;
          if (number1 < 0 || number3 < 0 || (number1 % 1) != 0 || (number3 % 1) != 0) {
             alert("请输入正整数");
          } else {
-            var a = Date.now();
+            a = Date.now();
             mt.postMessage(number1);
             mt.postMessage(number3);
          }
