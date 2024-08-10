@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Document</title>
+   <script>
+      var number1;
+      var number3;
+      var number2 = new Array();
+      const mt = new Worker('mt.js');
+      function read() {
+         var number1 = document.getElementById('n').value;
+         var number3 = document.getElementById('o').value;
+         if (number1 < 0 || number3 < 0 || (number1 % 1) != 0 || (number3 % 1) != 0) {
+            alert("请输入正整数");
+         } else {
+            var a = Date.now();
+            mt.postMessage(number1);
+            mt.postMessage(number3);
+         }
+      }
+      mt.onmessage = function (data1) {
+         if (data1.data instanceof Array) {
+            number2 = data1.data;
+            document.write("<p style='word-break: break-all'>" + number1 + "<sup>" + number3 + "</sup>=");
+            document.write(number2[number2.length - 1]);
+            for (i = number2.length - 2; i >= 0; i = i - 1) {
+               if (number2[i] >= 100) {
+                  document.write(number2[i]);
+               }
+               else {
+                  if (number2[i] >= 10) {
+                     document.write("0" + number2[i]);
+                  }
+                  else {
+                     document.write("00" + number2[i]);
+                  }
+               }
+            }
+            document.write("</p>");
+            var b = Date.now();
+            alert("计算成功，共用时" + ((b - a) / 1000) + "秒");
+         } else {
+            document.getElementById('b').innerHTML = "正在计算中：" + data1.data + "/" + number3;
+         }
+      }
+   </script>
+</head>
+
+<body>
+   <div id="b">
+      <label for="n">
+         <input type="number" id="n" value="" minlength="1" />的<input type="number" id="o" value="" minlength="1" />次幂
+      </label>
+      <button onclick="read ()">计算</button>
+   </div>
+</body>
+
+</html>
