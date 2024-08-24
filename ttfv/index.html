@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of trigonometric function values</title>
+</head>
+
+<body>
+    <div id="content">
+        <p>将0~π平均分为<input type="number" id="n" value="648000" minlength="1" />份（建议为648000，步长为一秒）</p>
+        <button onclick="cal ()">开始计算</button>
+    </div>
+    <script>//input
+        var ressin = new Array();
+        var rescos = new Array();
+        var number;
+        function cal () {
+            number = document.getElementById('n').value;
+            if (number <= 0 || (number % 1) != 0) {
+                alert("请输入正整数");
+            } else {//calculate
+                document.getElementById("content").innerHTML = "正在计算中…………";
+                for (let n = 0; n <= number; n++) {
+                    rescos[n] = Math.cos(Math.PI / number * n);
+                }
+                for (let n = 0; n <= number; n++) {
+                    ressin[n] = Math.sin(Math.PI / number * n);
+                }
+                alert('计算完成');
+                //output
+                document.write("<table>");
+                document.write("<tr><td>弧度值</td><td>正弦值</td><td>余弦值</td>");
+                for (let n = 0; n <= number; n++) {
+                    document.write("<tr>");
+                    document.write("<td>" + n + "/" + number + "π" + "</td>");
+                    document.write("<td>" + ressin[n] + "</td>");
+                    document.write("<td>" + rescos[n] + "</td>");
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            }
+        }
+    </script>
+</body>
+
+</html>
