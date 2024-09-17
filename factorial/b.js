@@ -2,7 +2,7 @@ self.onmessage = function (data2) {
     function a1 () {
         postMessage(i);
     }
-    mt.setInterval(a1 (), 500);
+    setInterval(a1 (), 500);
     num=data2.data;
     let result = 1n; // 使用BigInt来处理大整数
     var i;
