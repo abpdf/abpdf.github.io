@@ -1,8 +1,8 @@
 self.onmessage = function (data2) {
-    var int = self.setInterval("a1()", 500);
-    function a1() {
+    function a1 () {
         postMessage(i);
     }
+    var int1 = mt.setInterval(a1 (), 500);
     num=data2.data;
     let result = 1n; // 使用BigInt来处理大整数
     var i;
