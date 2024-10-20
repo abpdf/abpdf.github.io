@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		var a;
+		var x = new Array();
+		var y = new Array();
+		var sub = new Array();
+		var sup = new Array();
+		function s1() {
+			a = document.getElementById('n').value;
+			document.getElementById("c").innerHTML = "";
+			for (let i = 1; i <= a; i++) {
+				document.getElementById("c").innerHTML += "(<input type=\"number\" id=\"a" + i + "\">,<input type=\"number\" id=\"b" + i + "\">)<br />";
+			}
+			document.getElementById("c").innerHTML += "<button onclick=\"s2()\">确定</button>";
+		}
+		function s2() {
+			for (i = 0; i < a; i++) {
+				x[i] = document.getElementById("a" + (i + 1)).value;
+				y[i] = document.getElementById("b" + (i + 1)).value;
+			}
+			calc();
+		}
+		function calc() {
+			c1();
+			c2();
+		}
+		function c1() {
+			for (let i = 0; i < a; i++) {
+				sup[i] = BigInt(y[i]);
+				sub[i] = 1n;
+				for (let j = 0;j<a ;j++) {
+					if (i===j){continue;}
+					sub[i]*=BigInt(x[i]-x[j]);
+				}
+			}
+		}
+		function c2() {
+
+		}
+	</script>
+</head>
+
+<body>
+	<div id="c">
+		<p>一共<input type="number" value="2" id="n">个点<button onclick="s1()">确定</button></p>
+	</div>
+</body>
+
+</html>
