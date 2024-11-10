@@ -11,6 +11,10 @@
 		var y = new Array();
 		var sub = new Array();
 		var sup = new Array();
+		var temp1 = new Array();
+		var temp2 = new Array();
+		var temp3 = new Array();
+		var temp4 = new Array();
 		function s1() {
 			a = document.getElementById('n').value;
 			document.getElementById("c").innerHTML = "";
@@ -34,14 +38,37 @@
 			for (let i = 0; i < a; i++) {
 				sup[i] = BigInt(y[i]);
 				sub[i] = 1n;
-				for (let j = 0;j<a ;j++) {
-					if (i===j){continue;}
-					sub[i]*=BigInt(x[i]-x[j]);
+				for (let j = 0; j < a; j++) {
+					if (i === j) { continue; }
+					sub[i] *= BigInt(x[i] - x[j]);
 				}
 			}
 		}
 		function c2() {
-
+			for (let i = 0; i < a; i++) {
+				for (let j = 0; j < i; j++) {
+					temp1[j] = BigInt(x[j]);
+				}
+				for (let j = i; j < a - 1; j++) {
+					temp1[j] = BigInt(x[j + 1]);
+				}
+				temp2[i] = new Array();
+				temp2[i][0] = 1n;
+				for (let j = 0; j < temp1.length; j++) {
+					temp3[0] = 0n;
+					for (let k = 0; k < temp2[i].length; k++) {
+						temp3[k + 1] = temp2[i][k];
+						temp4[k] = temp2[i][k] * (-1n) * temp1[k];
+					}
+					temp4[temp3.length - 1] = 0n;
+					for (let l = 0; l < temp3.length; l++) {
+						temp2[i][l] += temp3[l] + temp4[l];
+					}
+					temp3 = [];
+					temp4 = [];
+				}
+				true;
+			}
 		}
 	</script>
 </head>
