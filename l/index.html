@@ -33,6 +33,7 @@
 		function calc() {
 			c1();
 			c2();
+			output();
 		}
 		function c1() {
 			for (let i = 0; i < a; i++) {
@@ -61,13 +62,20 @@
 						temp4[k] = temp2[i][k] * (-1n) * temp1[k];
 					}
 					temp4[temp3.length - 1] = 0n;
+					temp2[i][temp3.length - 1] = 0n;
 					for (let l = 0; l < temp3.length; l++) {
 						temp2[i][l] += temp3[l] + temp4[l];
 					}
 					temp3 = [];
 					temp4 = [];
 				}
-				true;
+			}
+		}
+		function output(){
+			for (let h= 0;  h< temp2.length; h++) {
+				for (let i = 0; i < temp2[h].length; i++) {
+					
+				}
 			}
 		}
 	</script>
