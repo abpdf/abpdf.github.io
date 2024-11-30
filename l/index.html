@@ -60,7 +60,7 @@
 					temp3[0] = 0n;
 					for (let k = 0; k < temp2[i].length; k++) {
 						temp3[k + 1] = temp2[i][k];
-						temp4[k] = temp2[i][k] * (-1n) * temp1[k];
+						temp4[k] = temp2[i][k] * (-1n) * temp1[j];
 					}
 					temp4[temp3.length - 1] = 0n;
 					if (temp2[i][temp3.length - 1] ===undefined) {
@@ -80,7 +80,7 @@
 			}
 			for (let h = 0; h < temp2.length; h++) {
 				for (let i = 0; i < temp2[h].length; i++) {
-					result[i] += temp2[h][i] * sup[h];
+					result[i] += temp2[i][h] * sup[h];
 				}
 			}
 			document.getElementById("c").innerHTML = "";
