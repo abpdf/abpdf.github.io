@@ -80,14 +80,14 @@
 			}
 			for (let h = 0; h < temp2.length; h++) {
 				for (let i = 0; i < temp2[h].length; i++) {
-					result[i] += temp2[i][h] * sup[h];
+					result[i] += temp2[i][h] * sup[h] * 1000n / sub[h];
 				}
 			}
 			document.getElementById("c").innerHTML = "";
 			for (let i = a - 1; i > 0; i--) {
-				document.getElementById("c").innerHTML += (result[i] / sub[i]) + "." + (sup[i] * result[i] * 1000n) % sub[i] + "x<sup>" + i + "</sup>+";
+				document.getElementById("c").innerHTML += (result[i] / 1000n) + "." +result[i]% 1000n + "x<sup>" + i + "</sup>+";
 			}
-			document.getElementById("c").innerHTML += (result[0] / sub[0]) + "." + (sup[0] * result[0] * 1000n) % sub[0];
+			document.getElementById("c").innerHTML += (result[i] / 1000n) + "." + result[i]% 1000n;
 		}
 	</script>
 </head>
