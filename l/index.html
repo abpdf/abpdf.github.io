@@ -15,6 +15,7 @@
 		var temp2 = new Array();
 		var temp3 = new Array();
 		var temp4 = new Array();
+		var result = new Array();
 		function s1() {
 			a = document.getElementById('n').value;
 			document.getElementById("c").innerHTML = "";
@@ -62,21 +63,31 @@
 						temp4[k] = temp2[i][k] * (-1n) * temp1[k];
 					}
 					temp4[temp3.length - 1] = 0n;
-					temp2[i][temp3.length - 1] = 0n;
+					if (temp2[i][temp3.length - 1] ===undefined) {
+						temp2[i][temp3.length - 1] = 0n;
+					}
 					for (let l = 0; l < temp3.length; l++) {
-						temp2[i][l] += temp3[l] + temp4[l];
+						temp2[i][l] = temp3[l] + temp4[l];
 					}
 					temp3 = [];
 					temp4 = [];
 				}
 			}
 		}
-		function output(){
-			for (let h= 0;  h< temp2.length; h++) {
+		function output() {
+			for (let i = 0; i <= a - 1; i++) {
+				result[i] = 0n;
+			}
+			for (let h = 0; h < temp2.length; h++) {
 				for (let i = 0; i < temp2[h].length; i++) {
-					
+					result[i] += temp2[h][i] * sup[h];
 				}
 			}
+			document.getElementById("c").innerHTML = "";
+			for (let i = a - 1; i > 0; i--) {
+				document.getElementById("c").innerHTML += (result[i] / sub[i]) + "." + (sup[i] * result[i] * 1000n) % sub[i] + "x<sup>" + i + "</sup>+";
+			}
+			document.getElementById("c").innerHTML += (result[0] / sub[0]) + "." + (sup[0] * result[0] * 1000n) % sub[0];
 		}
 	</script>
 </head>
