@@ -80,7 +80,7 @@
 			}
 			for (let h = 0; h < temp2.length; h++) {
 				for (let i = 0; i < temp2[h].length; i++) {
-					result[i] += temp2[i][h] * sup[h] * 1000n / sub[h];
+					result[i] += temp2[h][i] * sup[h] * 1000n / sub[h];
 				}
 			}
 			document.getElementById("c").innerHTML = "";
