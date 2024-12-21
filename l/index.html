@@ -58,9 +58,9 @@
 				}
 				bit2 = bit2 > bitt1 ? bit2 : bitt1;
 			}
-			for(let i = 0; i < a; i++){
-				x[i]*=(10**bit2);
-				y[i]*=(10**bit2);
+			for (let i = 0; i < a; i++) {
+				x[i] *= (10 ** bit2);
+				y[i] *= (10 ** bit2);
 			}
 			for (let i = 0; i < a; i++) {
 				sup[i] = BigInt(y[i]);
@@ -104,8 +104,9 @@
 				result[i] = 0n;
 			}
 			for (let h = 0; h < temp2.length; h++) {
-				for (let i = 0; i < temp2[h].length; i++) {
-					result[i] += temp2[h][i] * sup[h] * (10n ** BigInt(bit1)) / sub[h];
+				result[0] += temp2[h][0] * sup[h] / (10n ** BigInt(bit2)) * (10n ** BigInt(bit1)) / sub[h];
+				for (let i = 1; i < temp2[h].length; i++) {
+					result[i] += temp2[h][i] * sup[h] * (10n ** (BigInt(bit2)*(BigInt(i)-1n))) * (10n ** BigInt(bit1)) / sub[h];
 				}
 			}
 			document.getElementById("c").innerHTML = "";
