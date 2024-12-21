@@ -91,9 +91,9 @@
 				str += "0";
 			}
 			for (let i = a - 1; i > 0; i--) {
-				document.getElementById("c").innerHTML += (result[i] / (10n ** BigInt(bit1))) + "." + result[i].toString().slice(bit1 * (-1)) + "x<sup>" + i + "</sup>+";
+				document.getElementById("c").innerHTML += (result[i] / (10n ** BigInt(bit1))) + "." + (str + (result[i] < 0 ? result[i] * -1n : result[i]).toString()).slice(bit1 * (-1)) + "x<sup>" + i + "</sup>+";
 			}
-			document.getElementById("c").innerHTML += (result[0] / (10n ** BigInt(bit1))) + "." + result[0].toString().slice(bit1 * (-1));
+			document.getElementById("c").innerHTML += (result[0] / (10n ** BigInt(bit1))) + "." + (str + (result[0] < 0 ? result[0] * -1n : result[0]).toString()).slice(bit1 * (-1));
 		}
 	</script>
 </head>
