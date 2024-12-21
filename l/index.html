@@ -8,6 +8,9 @@
 	<script>
 		var a;
 		var bit1;
+		var bit2;
+		var bitt1;
+		var bitt2;
 		var str;
 		var x = new Array();
 		var y = new Array();
@@ -40,6 +43,25 @@
 			output();
 		}
 		function c1() {
+			for (let i = 0; i < a; i++) {
+				bitt1 = 0;
+				bitt2 = x[i];
+				while (bitt2 % 1 != 0) {
+					bitt2 *= 10;
+					bitt1 += 1;
+				}
+				bit2 = bit2 > bitt1 ? bit2 : bitt1;
+				bitt2 = y[i];
+				while (bitt2 % 1 != 0) {
+					bitt2 *= 10;
+					bitt1 += 1;
+				}
+				bit2 = bit2 > bitt1 ? bit2 : bitt1;
+			}
+			for(let i = 0; i < a; i++){
+				x[i]*=(10**bit2);
+				y[i]*=(10**bit2);
+			}
 			for (let i = 0; i < a; i++) {
 				sup[i] = BigInt(y[i]);
 				sub[i] = 1n;
