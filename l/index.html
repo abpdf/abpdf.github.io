@@ -63,21 +63,21 @@
 				y[i] *= (10 ** bit2);
 			}
 			for (let i = 0; i < a; i++) {
-				sup[i] = BigInt(y[i]);
+				sup[i] = BigInt(Math.round(y[i]));
 				sub[i] = 1n;
 				for (let j = 0; j < a; j++) {
 					if (i === j) { continue; }
-					sub[i] *= BigInt(x[i] - x[j]);
+					sub[i] *= BigInt(Math.round(x[i] - x[j]));
 				}
 			}
 		}
 		function c2() {
 			for (let i = 0; i < a; i++) {
 				for (let j = 0; j < i; j++) {
-					temp1[j] = BigInt(x[j]);
+					temp1[j] = BigInt(Math.round(x[j]));
 				}
 				for (let j = i; j < a - 1; j++) {
-					temp1[j] = BigInt(x[j + 1]);
+					temp1[j] = BigInt(Math.round(x[j + 1]));
 				}
 				temp2[i] = new Array();
 				temp2[i][0] = 1n;
