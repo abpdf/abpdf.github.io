@@ -21,6 +21,7 @@
 		var temp3 = new Array();
 		var temp4 = new Array();
 		var result = new Array();
+		var resultOfGraph = new Array();
 		function s1() {
 			a = document.getElementById('n').value;
 			bit1 = document.getElementById('b').value;
@@ -117,6 +118,17 @@
 				document.getElementById("c").innerHTML += (result[i] < 0 && result[i] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[i] / (10n ** BigInt(bit1))) + "." + (str + (result[i] < 0 ? result[i] * -1n : result[i]).toString()).slice(bit1 * (-1)) + "x<sup>" + i + "</sup>+";
 			}
 			document.getElementById("c").innerHTML += (result[0] < 0 && result[0] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[0] / (10n ** BigInt(bit1))) + "." + (str + (result[0] < 0 ? result[0] * -1n : result[0]).toString()).slice(bit1 * (-1));
+			document.getElementById("c").innerHTML += "<hr /><button onclick='g()'>绘制图像</button>";
+		}
+		function g() {
+			resultOfGraph[0] =new Array();
+			resultOfGraph[1] =new Array();
+			calcg();
+		}
+		function calcg() {
+			for (let i = 0; i < a; i++) {
+				resultOfGraph[0];
+			}
 		}
 	</script>
 </head>
