@@ -121,8 +121,32 @@
 			document.getElementById("c").innerHTML += "<hr /><button onclick='g()'>绘制图像</button>";
 		}
 		function g() {
-			resultOfGraph[0] =new Array();
-			resultOfGraph[1] =new Array();
+			resultOfGraph[0] = new Array();
+			resultOfGraph[1] = new Array();
+			let xmax = x[0];
+			for (let i = 1; i < x.length; i++) {
+				if (x[i] > xmax) {
+					xmax = x[i];
+				}
+			}
+			let xmin = x[0];
+			for (let i = 1; i < x.length; i++) {
+				if (x[i] < xmin) {
+					xmin = x[i];
+				}
+			}
+			let ymax = y[0];
+			for (let i = 1; i < y.length; i++) {
+				if (y[i] > ymax) {
+					ymax = y[i];
+				}
+			}
+			let ymin = y[0];
+			for (let i = 1; i < y.length; i++) {
+				if (y[i] < ymin) {
+					ymin = y[i];
+				}
+			}
 			calcg();
 		}
 		function calcg() {
