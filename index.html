@@ -1,49 +1,30 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8" />
-    <script src="trueOrFalse.js"></script>
-    <script src="true.js"></script>
-    <script src="false.js"></script>
-    <script src="judge.js"></script>
-    <script src="message.js"></script>
-    <link href="message\style.css" rel="stylesheet" type="text/css" />
-</head>
+<script>
+for(let i=0;i<200;i++){
+document.write("<img src=\"0.png\" style=\"animation-delay:"+(i*50)+"ms\"/>");
+}
+</script><style>
+img{
+visibility: hidden;
+animation-duration:5s;
+animation-name:i;
+animation-iteration-count:infinite;
+}
+@keyframes i{
+0%{visibility: visible;
+width:27px;
+height:32.5px;
+}
+50%{visibility: visible;
+transform:rotate(1800deg);
+width:81px;
+height: 97.5px;
+}
+100%{visibility: visible;
+transform:rotate(3600deg);
 
-<body>
-</body>
-<div>
-    <div>
-        <img id="c1" src="number/8.svg" />
-        <img id="c2" src="number/8.svg" />
-        年
-        <img id="c3" src="number/8.svg" />
-        <img id="c4" src="number/8.svg" />
-        <img id="c5" src="number/8.svg" />
-        天
-    </div>
-    <div>
-        <img id="c6" src="number/8.svg" />
-        <img id="c7" src="number/8.svg" />
-        <svg width="15" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="3" cy="70" r="3" fill="black" />
-            <circle cx="3" cy="130" r="3" fill="black" />
-        </svg>
-        <img id="c8" src="number/8.svg" />
-        <img id="c9" src="number/8.svg" />
-        <svg width="15" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="3" cy="70" r="3" fill="black" />
-            <circle cx="3" cy="130" r="3" fill="black" />
-        </svg>
-        <img id="c10" src="number/8.svg" />
-        <img id="c11" src="number/8.svg" />
-    </div>
-</div>
-<h1 id="c12"></h1>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1409136605&auto=1&height=66"></iframe>
-<hr>
-<a href="#c14" onclick="a3()" id="c13">展开消息……</a>
-<iframe class="hidden" id="c14" width="100%" height="1100px" src="message/message.html"></iframe>
-</body>
-</html>
+width:27px;
+height:32.5px;
+}
+}
+</style>
