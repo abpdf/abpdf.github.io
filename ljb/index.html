@@ -1,32 +1,30 @@
 
 <script>
-for(let i=0;i<=15;i++){
-for(let j=0;j<=15;j++){
-document.write("<img src=\"1.png\"/>");
-}
-document.write("");
+for(let i=0;i<200;i++){
+document.write("<img src=\"0.png\" style=\"animation-delay:"+(i*50)+"ms\"/>");
 }
 </script><style>
 img{
-animation-duration:19.19810s;
+visibility: hidden;
+animation-duration:5s;
 animation-name:i;
 animation-iteration-count:infinite;
 }
 @keyframes i{
-0%{
-width:1080px;
-height:1300px;
+0%{visibility: visible;
+width:27px;
+height:32.5px;
 }
-50%{
-transform:rotate(18000deg);
-width:108px;
-height:130px;
+50%{visibility: visible;
+transform:rotate(1800deg);
+width:81px;
+height: 97.5px;
 }
-100%{
-transform:rotate(36000deg);
+100%{visibility: visible;
+transform:rotate(3600deg);
 
-width:1080px;
-height:1300px;
+width:27px;
+height:32.5px;
 }
 }
 </style>
