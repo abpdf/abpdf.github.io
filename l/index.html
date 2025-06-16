@@ -124,28 +124,14 @@
 			resultOfGraph[0] = new Array();
 			resultOfGraph[1] = new Array();
 			let xmax = x[0];
-			for (let i = 1; i < x.length; i++) {
-				if (x[i] > xmax) {
-					xmax = x[i];
-				}
-			}
 			let xmin = x[0];
-			for (let i = 1; i < x.length; i++) {
-				if (x[i] < xmin) {
-					xmin = x[i];
-				}
-			}
 			let ymax = y[0];
-			for (let i = 1; i < y.length; i++) {
-				if (y[i] > ymax) {
-					ymax = y[i];
-				}
-			}
 			let ymin = y[0];
-			for (let i = 1; i < y.length; i++) {
-				if (y[i] < ymin) {
-					ymin = y[i];
-				}
+			for (let i = 1; i < x.length; i++) {
+				xmin=x[i]<xmin?x[i]:xmax;
+				xmax=x[i]>xmax?x[i]:xmax;
+				ymax=y[i]>ymax?y[i]:ymax;
+				ymin=y[i]<ymax?y[i]:ymax;
 			}
 			calcg();
 		}
