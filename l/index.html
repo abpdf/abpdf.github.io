@@ -22,6 +22,8 @@
 		var temp4 = new Array();
 		var result = new Array();
 		var resultOfGraph = new Array();
+		var draw;
+		var can;
 		function s1() {
 			a = document.getElementById('n').value;
 			bit1 = document.getElementById('b').value;
@@ -118,9 +120,12 @@
 				document.getElementById("c").innerHTML += (result[i] < 0 && result[i] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[i] / (10n ** BigInt(bit1))) + "." + (str + (result[i] < 0 ? result[i] * -1n : result[i]).toString()).slice(bit1 * (-1)) + "x<sup>" + i + "</sup>+";
 			}
 			document.getElementById("c").innerHTML += (result[0] < 0 && result[0] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[0] / (10n ** BigInt(bit1))) + "." + (str + (result[0] < 0 ? result[0] * -1n : result[0]).toString()).slice(bit1 * (-1));
-			document.getElementById("c").innerHTML += "<hr /><button onclick='g()'>绘制图像</button>";
+			document.getElementById("c").innerHTML += "<hr /><div id='d'><button onclick='g()'>绘制图像</button></div>";
 		}
 		function g() {
+			document.getElementById("d").innerHTML = "<canvas id='c1' width='1108' height='618'></canvas>";
+			can = document.getElementById("c1");
+			draw = can.getContext("2d");
 			resultOfGraph[0] = new Array();
 			resultOfGraph[1] = new Array();
 			let xmax = x[0];
@@ -128,12 +133,20 @@
 			let ymax = y[0];
 			let ymin = y[0];
 			for (let i = 1; i < x.length; i++) {
-				xmin=x[i]<xmin?x[i]:xmax;
-				xmax=x[i]>xmax?x[i]:xmax;
-				ymax=y[i]>ymax?y[i]:ymax;
-				ymin=y[i]<ymax?y[i]:ymax;
+				xmin = x[i] < xmin ? x[i] : xmax;
+				xmax = x[i] > xmax ? x[i] : xmax;
+				ymax = y[i] > ymax ? y[i] : ymax;
+				ymin = y[i] < ymax ? y[i] : ymax;
 			}
-			calcg();
+			dr();
+		}
+		function dr() {
+			draw.clearRect(0, 0, can.width, can.height);
+			draw.fillStyle = "gray";
+			draw.fillRect(0, 0, 1, can.height);
+			draw.fillRect(0, 0, can.width, 1);
+			draw.fillRect(can.width - 1, 0, 1, can.height);
+			draw.fillRect(0, can.height-1, can.width, 1);
 		}
 		function calcg() {
 			for (let i = 0; i < a; i++) {
