@@ -147,6 +147,11 @@
 			draw.fillRect(0, 0, can.width, 1);
 			draw.fillRect(can.width - 1, 0, 1, can.height);
 			draw.fillRect(0, can.height - 1, can.width, 1);
+			xy();
+		}
+		function xy() {
+			draw.fillStyle = "black";
+			draw.fillRect();
 		}
 		function calcg() {
 			for (let i = 0; i < a; i++) {
