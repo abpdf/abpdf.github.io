@@ -118,9 +118,12 @@
 				document.getElementById("c").innerHTML += (result[i] < 0 && result[i] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[i] / (10n ** BigInt(bit1))) + "." + (str + (result[i] < 0 ? result[i] * -1n : result[i]).toString()).slice(bit1 * (-1)) + "x<sup>" + i + "</sup>+";
 			}
 			document.getElementById("c").innerHTML += (result[0] < 0 && result[0] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[0] / (10n ** BigInt(bit1))) + "." + (str + (result[0] < 0 ? result[0] * -1n : result[0]).toString()).slice(bit1 * (-1));
-			document.getElementById("c").innerHTML += "<hr /><button onclick='g()'>绘制图像</button>";
+			document.getElementById("c").innerHTML += "<hr /><div id='d'><button onclick='g()'>绘制图像</button></div>";
 		}
 		function g() {
+			document.getElementById("d").innerHTML = "<canvas id='c1' width='1108' height='618'></canvas>";
+			let canvas = document.getElementById("c1");
+			let draw = canvas.getContext("2d");
 			resultOfGraph[0] = new Array();
 			resultOfGraph[1] = new Array();
 			let xmax = x[0];
@@ -133,7 +136,12 @@
 				ymax=y[i]>ymax?y[i]:ymax;
 				ymin=y[i]<ymax?y[i]:ymax;
 			}
-			calcg();
+			dr();
+		}
+		function dr() {
+			draw.clearRect(0, 0, canvas.width, canvas.height);
+			draw.fillStyle = "gray";
+			draw.fillRect(0, 0, 2, canvas.height);
 		}
 		function calcg() {
 			for (let i = 0; i < a; i++) {
