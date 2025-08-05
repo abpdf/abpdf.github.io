@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function moun() {
+            requestAnimationFrame(temple);
+            document.getElementById("1").innerHTML += "从前有座山，";
+        }
+        function temple() {
+            document.getElementById("1").innerHTML += "山里有座庙，";
+            requestAnimationFrame(laoHeShang);
+        }
+        function laoHeShang() {
+            document.getElementById("1").innerHTML += "庙里有个老和尚，";
+            requestAnimationFrame(story);
+        }
+        function story() {
+            document.getElementById("1").innerHTML += "老和尚在给小和尚讲故事，";
+            requestAnimationFrame(ending);
+        }
+        function ending() {
+            document.getElementById("1").innerHTML += "故事讲的是";
+            requestAnimationFrame(moun);
+        }
+        window.onload = function() {
+            moun()
+        }
+    </script>
+</head>
+<body>
+    <div id="1"></div>
+</body>
+</html>
