@@ -8,21 +8,26 @@
         function moun() {
             requestAnimationFrame(temple);
             document.getElementById("1").innerHTML += "从前有座山，";
+            window.scrollTo(0, document.body.scrollHeight);
         }
         function temple() {
             document.getElementById("1").innerHTML += "山里有座庙，";
+            window.scrollTo(0, document.body.scrollHeight);
             requestAnimationFrame(laoHeShang);
         }
         function laoHeShang() {
             document.getElementById("1").innerHTML += "庙里有个老和尚，";
+            window.scrollTo(0, document.body.scrollHeight);
             requestAnimationFrame(story);
         }
         function story() {
             document.getElementById("1").innerHTML += "老和尚在给小和尚讲故事，";
+            window.scrollTo(0, document.body.scrollHeight);
             requestAnimationFrame(ending);
         }
         function ending() {
             document.getElementById("1").innerHTML += "故事讲的是";
+            window.scrollTo(0, document.body.scrollHeight);
             requestAnimationFrame(moun);
         }
         window.onload = function() {
