@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function a1() {
+            document.getElementById("1").innerHTML = "/";
+            setTimeout(() => {
+                a2();
+            }, 300);
+        }
+        function a2() {
+            document.getElementById("1").innerHTML = "-";
+            setTimeout(() => {
+                a3();
+            }, 300);
+        }
+        function a3() {
+            document.getElementById("1").innerHTML = "\\";
+            setTimeout(() => {
+                a4();
+            }, 300);
+        }
+        function a4() {
+            document.getElementById("1").innerHTML = "|";
+            setTimeout(() => {
+                a1();
+            }, 300);
+        }
+        setTimeout(() => {
+            a1();
+        }, 300);
+    </script>
+</head>
+
+<body>
+    <div id="1"></div>
+</body>
+
+</html>
