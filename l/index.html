@@ -128,10 +128,10 @@
 			draw = can.getContext("2d");
 			resultOfGraph[0] = new Array();
 			resultOfGraph[1] = new Array();
-			let xmax = x[0];
-			let xmin = x[0];
-			let ymax = y[0];
-			let ymin = y[0];
+			var xmax = x[0];
+			var xmin = x[0];
+			var ymax = y[0];
+			var ymin = y[0];
 			for (let i = 1; i < x.length; i++) {
 				xmin = x[i] < xmin ? x[i] : xmax;
 				xmax = x[i] > xmax ? x[i] : xmax;
