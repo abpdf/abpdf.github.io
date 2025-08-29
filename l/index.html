@@ -134,10 +134,10 @@
 			xmym[2] = y[0];
 			xmym[3] = y[0];
 			for (let i = 1; i < x.length; i++) {
-				xmym[1] = x[i] < xmym[1] ? x[i] : xmym[0];
+				xmym[1] = x[i] < xmym[1] ? x[i] : xmym[1];
 				xmym[0] = x[i] > xmym[0] ? x[i] : xmym[0];
 				xmym[2] = y[i] > xmym[2] ? y[i] : xmym[2];
-				xmym[3] = y[i] < xmym[2] ? y[i] : xmym[2];
+				xmym[3] = y[i] < xmym[3] ? y[i] : xmym[3];
 			}
 			dr();
 		}
@@ -152,7 +152,7 @@
 		}
 		function asix() {
 			draw.fillStyle = "black";
-			draw.fillRect(0, px(0), can.width, 3);
+			draw.fillRect(0, Math.round(px(0)*can.height), can.width, 3);
 		}
 		function px(n) {
 			return Number((n-xmym[1])/(xmym[0]-xmym[1]));
