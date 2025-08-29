@@ -24,10 +24,7 @@
 		var resultOfGraph = new Array();
 		var draw;
 		var can;
-		var xmax;
-		var xmin;
-		var ymax;
-		var ymin;
+		var xmym = new Array();
 		function s1() {
 			a = document.getElementById('n').value;
 			bit1 = document.getElementById('b').value;
@@ -132,15 +129,15 @@
 			draw = can.getContext("2d");
 			resultOfGraph[0] = new Array();
 			resultOfGraph[1] = new Array();
-			xmax = x[0];
-			xmin = x[0];
-			ymax = y[0];
-			ymin = y[0];
+			xmym[0] = x[0];
+			xmym[1] = x[0];
+			xmym[2] = y[0];
+			xmym[3] = y[0];
 			for (let i = 1; i < x.length; i++) {
-				xmin = x[i] < xmin ? x[i] : xmax;
-				xmax = x[i] > xmax ? x[i] : xmax;
-				ymax = y[i] > ymax ? y[i] : ymax;
-				ymin = y[i] < ymax ? y[i] : ymax;
+				xmym[1] = x[i] < xmym[1] ? x[i] : xmym[0];
+				xmym[0] = x[i] > xmym[0] ? x[i] : xmym[0];
+				xmym[2] = y[i] > xmym[2] ? y[i] : xmym[2];
+				xmym[3] = y[i] < xmym[2] ? y[i] : xmym[2];
 			}
 			dr();
 		}
