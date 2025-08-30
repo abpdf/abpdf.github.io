@@ -152,14 +152,14 @@
 		}
 		function asix() {
 			draw.fillStyle = "black";
-			draw.fillRect(0,  Math.round(can.height *((1 - py(0)) > 1 ? 1 : ((1 - py(0)) < 0 ? 0 : (1 - py(0)))))-2, can.width, 4);
+			draw.fillRect(0,  Math.round(can.height *(py(0) > 1 ? 1 : (py(0) < 0 ? 0 :  py(0))))-2, can.width, 4);
 			draw.fillRect(Math.round(can.width*(px(0) > 1 ? 1 : (px(0) < 0 ? 0 : px(0))))-2, 0, 4, can.height);
 		}
 		function px(n) {
 			return Number((n - xmym[1]) / (xmym[0] - xmym[1]));
 		}
 		function py(n) {
-			return Number((n - xmym[3]) / (xmym[2] - xmym[3]));
+			return 1 -Number((n - xmym[3]) / (xmym[2] - xmym[3]));
 		}
 		function calcg() {
 			for (let i = 0; i < a; i++) {
