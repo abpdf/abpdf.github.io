@@ -22,7 +22,7 @@
 		var temp4 = new Array();
 		var result = new Array();
 		var resultOfGraph = new Array();
-		var draw;
+		var d;
 		var can;
 		var xmym = new Array();
 		function s1() {
@@ -126,7 +126,7 @@
 		function g() {
 			document.getElementById("d").innerHTML = "<canvas id='c1' width='1108' height='618'></canvas>";
 			can = document.getElementById("c1");
-			draw = can.getContext("2d");
+			d = can.getContext("2d");
 			resultOfGraph[0] = new Array();
 			resultOfGraph[1] = new Array();
 			xmym[0] = x[0];
@@ -142,18 +142,18 @@
 			dr();
 		}
 		function dr() {
-			draw.clearRect(0, 0, can.width, can.height);
-			draw.fillStyle = "gray";
-			draw.fillRect(0, 0, 1, can.height);
-			draw.fillRect(0, 0, can.width, 1);
-			draw.fillRect(can.width - 1, 0, 1, can.height);
-			draw.fillRect(0, can.height - 1, can.width, 1);
+			d.clearRect(0, 0, can.width, can.height);
+			d.fillStyle = "gray";
+			d.fillRect(0, 0, 1, can.height);
+			d.fillRect(0, 0, can.width, 1);
+			d.fillRect(can.width - 1, 0, 1, can.height);
+			d.fillRect(0, can.height - 1, can.width, 1);
 			asix();
 		}
 		function asix() {
-			draw.fillStyle = "black";
-			draw.fillRect(0,  Math.round(can.height *(py(0) > 1 ? 1 : (py(0) < 0 ? 0 :  py(0))))-2, can.width, 4);
-			draw.fillRect(Math.round(can.width*(px(0) > 1 ? 1 : (px(0) < 0 ? 0 : px(0))))-2, 0, 4, can.height);
+			d.fillStyle = "black";
+			d.fillRect(0,  Math.round(can.height *(py(0) > 1 ? 1 : (py(0) < 0 ? 0 :  py(0))))-2, can.width, 4);
+			d.fillRect(Math.round(can.width*(px(0) > 1 ? 1 : (px(0) < 0 ? 0 : px(0))))-2, 0, 4, can.height);
 		}
 		function px(n) {
 			return Number((n - xmym[1]) / (xmym[0] - xmym[1]));
