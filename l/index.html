@@ -6,12 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script>
-		var r=/^(?:\+|-)?(\d+)(?:\.(\d+))?$/g;
+		var r = /^(?:\+|-)?(\d+)(?:\.(\d+))?$/g;
 		var a;
 		var bit1;
-		var bit2;
-		var bitt1;
-		var bitt2;
+		var bit2=0;
+		var mox = new Array()
+		var moy = new Array()
 		var str;
 		var x = new Array();
 		var y = new Array();
@@ -47,7 +47,7 @@
 			c2();
 			output();
 		}
-		function c1() {
+		function c1() {/*
 			for (let i = 0; i < a; i++) {
 				bitt1 = 0;
 				bitt2 = x[i];
@@ -74,6 +74,14 @@
 					if (i === j) { continue; }
 					sub[i] *= BigInt(Math.round(x[i] - x[j]));
 				}
+			}*/
+			for (let i = 0; i < a; i++) {
+				mox[i] = r.exec(x[i]);
+				moy[i] = r.exec(y[i]);
+				bit2 = bit2>mox[2].length?bit2:mox[2].length;
+				bit2 = bit2>moy[2].length?bit2:moy[2].length;
+
+				
 			}
 		}
 		function c2() {
@@ -153,14 +161,14 @@
 		}
 		function asix() {
 			d.fillStyle = "black";
-			d.fillRect(0,  Math.round(can.height *(py(0) > 1 ? 1 : (py(0) < 0 ? 0 :  py(0))))-2, can.width, 4);
-			d.fillRect(Math.round(can.width*(px(0) > 1 ? 1 : (px(0) < 0 ? 0 : px(0))))-2, 0, 4, can.height);
+			d.fillRect(0, Math.round(can.height * (py(0) > 1 ? 1 : (py(0) < 0 ? 0 : py(0)))) - 2, can.width, 4);
+			d.fillRect(Math.round(can.width * (px(0) > 1 ? 1 : (px(0) < 0 ? 0 : px(0)))) - 2, 0, 4, can.height);
 		}
 		function px(n) {
 			return Number((n - xmym[1]) / (xmym[0] - xmym[1]));
 		}
 		function py(n) {
-			return 1 -Number((n - xmym[3]) / (xmym[2] - xmym[3]));
+			return 1 - Number((n - xmym[3]) / (xmym[2] - xmym[3]));
 		}
 		function calcg() {
 			for (let i = 0; i < a; i++) {
