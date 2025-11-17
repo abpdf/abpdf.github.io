@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script>
-		var r = /^(?:\+|-)?(\d+)(?:\.(\d+))?$/g;
+		var r = /^(?:\+|-)?(\d+)(?:\.(\d+))?$/;
 		var a;
 		var bit1;
-		var bit2=0;
+		var bit2 = 0;
 		var mox = new Array()
 		var moy = new Array()
 		var str;
@@ -78,11 +78,10 @@
 			for (let i = 0; i < a; i++) {
 				mox[i] = r.exec(x[i]);
 				moy[i] = r.exec(y[i]);
-				bit2 = bit2>mox[2].length?bit2:mox[2].length;
-				bit2 = bit2>moy[2].length?bit2:moy[2].length;
-
-				
+				bit2 = bit2 > (mox[i][2] === undefined ? "" : mox[i][2]).length ? bit2 : mox[i][2].length;
+				bit2 = bit2 > (moy[i][2] === undefined ? "" : moy[i][2]).length ? bit2 : moy[i][2].length;
 			}
+			console.log(mox);
 		}
 		function c2() {
 			for (let i = 0; i < a; i++) {
