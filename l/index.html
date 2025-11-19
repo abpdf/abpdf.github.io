@@ -47,34 +47,7 @@
 			c2();
 			output();
 		}
-		function c1() {/*
-			for (let i = 0; i < a; i++) {
-				bitt1 = 0;
-				bitt2 = x[i];
-				while (bitt2 % 1 != 0) {
-					bitt2 *= 10;
-					bitt1 += 1;
-				}
-				bit2 = bit2 > bitt1 ? bit2 : bitt1;
-				bitt2 = y[i];
-				while (bitt2 % 1 != 0) {
-					bitt2 *= 10;
-					bitt1 += 1;
-				}
-				bit2 = bit2 > bitt1 ? bit2 : bitt1;
-			}
-			for (let i = 0; i < a; i++) {
-				x[i] *= (10 ** bit2);
-				y[i] *= (10 ** bit2);
-			}
-			for (let i = 0; i < a; i++) {
-				sup[i] = BigInt(Math.round(y[i]));
-				sub[i] = 1n;
-				for (let j = 0; j < a; j++) {
-					if (i === j) { continue; }
-					sub[i] *= BigInt(Math.round(x[i] - x[j]));
-				}
-			}*/
+		function c1() {
 			for (let i = 0; i < a; i++) {
 				mox[i] = r.exec(x[i]);
 				moy[i] = r.exec(y[i]);
@@ -82,8 +55,8 @@
 				bit2 = bit2 > (moy[i][3] === undefined ? "" : moy[i][2]).length ? bit2 : moy[i][2].length;
 			}
 			for (let i = 0; i < a; i++) {
-				x[i] = BigInt(mox[i][1] ? mox[i][1] : "" + mox[i][2] + (mox[i][3] === undefined ? "" : mox[i][3] + "0".repeat(bit2 - mox[i][2].length)));
-				y[i] = BigInt(moy[i][1] ? moy[i][1] : "" + moy[i][2] + (moy[i][3] === undefined ? "" : moy[i][3] + "0".repeat(bit2 - moy[i][2].length)));
+				x[i] = BigInt((mox[i][1] ? mox[i][1] : "") + mox[i][2] + (mox[i][3] === undefined ? "" : mox[i][3] + "0".repeat(bit2 - mox[i][2].length)));
+				y[i] = BigInt((moy[i][1] ? moy[i][1] : "") + moy[i][2] + (moy[i][3] === undefined ? "" : moy[i][3] + "0".repeat(bit2 - moy[i][2].length)));
 			}
 			for (let i = 0; i < a; i++) {
 				sup[i] = y[i];
