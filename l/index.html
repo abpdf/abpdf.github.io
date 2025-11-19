@@ -82,8 +82,8 @@
 				bit2 = bit2 > (moy[i][3] === undefined ? "" : moy[i][2]).length ? bit2 : moy[i][2].length;
 			}
 			for (let i = 0; i < a; i++) {
-				x[i] = BigInt(mox[i][1] + mox[i][2] + (mox[i][3] === undefined ? "" : mox[i][3] + "0".repeat(bit2 - mox[i][2].length)));
-				y[i] = BigInt(moy[i][1] + moy[i][2] + (moy[i][3] === undefined ? "" : moy[i][3] + "0".repeat(bit2 - moy[i][2].length)));
+				x[i] = BigInt(mox[i][1] ? mox[i][1] : "" + mox[i][2] + (mox[i][3] === undefined ? "" : mox[i][3] + "0".repeat(bit2 - mox[i][2].length)));
+				y[i] = BigInt(moy[i][1] ? moy[i][1] : "" + moy[i][2] + (moy[i][3] === undefined ? "" : moy[i][3] + "0".repeat(bit2 - moy[i][2].length)));
 			}
 			for (let i = 0; i < a; i++) {
 				sup[i] = y[i];
