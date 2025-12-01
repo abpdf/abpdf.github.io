@@ -151,11 +151,11 @@
 		}
 		function px(n) {
 			n = BigInt(n);
-			return Number((n - xmym[1]) / (xmym[0] - xmym[1]));
+			return Number((n*bit2 - xmym[1]) / (xmym[0] - xmym[1]));
 		}
 		function py(n) {
 			n = BigInt(n);
-			return 1 - Number((n - xmym[3]) / (xmym[2] - xmym[3]));
+			return 1 - Number((n*bit2 - xmym[3]) / (xmym[2] - xmym[3]));
 		}
 		function calcg() {
 			for (let i = 0; i < a; i++) {
