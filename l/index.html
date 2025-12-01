@@ -131,6 +131,10 @@
 				xmym[2] = y[i] > xmym[2] ? y[i] : xmym[2];
 				xmym[3] = y[i] < xmym[3] ? y[i] : xmym[3];
 			}
+			xmym[0] += 1;
+			xmym[1] -= 1;
+			xmym[2] += 1;
+			xmym[3] -= 1;
 			dr();
 		}
 		function dr() {
