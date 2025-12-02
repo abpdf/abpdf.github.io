@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		var a;
+		var bit1;
+		var bit2;
+		var bitt1;
+		var bitt2;
+		var str;
+		var x = new Array();
+		var y = new Array();
+		var sub = new Array();
+		var sup = new Array();
+		var temp1 = new Array();
+		var temp2 = new Array();
+		var temp3 = new Array();
+		var temp4 = new Array();
+		var result = new Array();
+		var jindu = 0;
+		function s1() {
+			a = document.getElementById('n').value;
+			bit1 = document.getElementById('b').value;
+			document.getElementById("c").innerHTML = "";
+			for (let i = 1; i <= a; i++) {
+				document.getElementById("c").innerHTML += "(<input type=\"number\" id=\"a" + i + "\">,<input type=\"number\" id=\"b" + i + "\">)<br />";
+			}
+			document.getElementById("c").innerHTML += "<button onclick=\"s2()\">确定</button>";
+		}
+		function s2() {
+			for (i = 0; i < a; i++) {
+				x[i] = i + 1;
+				y[i] = i + 1;
+			}
+			y[114513] = 1919810;
+			calc();
+		}
+		function calc() {
+			c1();
+			c2();
+			output();
+		}
+		function c1() {
+			for (let i = 0; i < a; i++) {
+				bitt1 = 0;
+				bitt2 = x[i];
+				while (bitt2 % 1 != 0) {
+					bitt2 *= 10;
+					bitt1 += 1;
+				}
+				bit2 = bit2 > bitt1 ? bit2 : bitt1;
+				bitt2 = y[i];
+				while (bitt2 % 1 != 0) {
+					bitt2 *= 10;
+					bitt1 += 1;
+				}
+				bit2 = bit2 > bitt1 ? bit2 : bitt1;
+			}
+			for (let i = 0; i < a; i++) {
+				x[i] *= (10 ** bit2);
+				y[i] *= (10 ** bit2);
+			}
+			for (let i = 0; i < a; i++) {
+				sup[i] = BigInt(Math.round(y[i]));
+				sub[i] = 1n;
+				for (let j = 0; j < a; j++) {
+					if (i === j) { continue; }
+					sub[i] *= BigInt(Math.round(x[i] - x[j]));
+				}
+			}
+		}
+		function c2() {
+			i = jindu;
+			for (let j = 0; j < i; j++) {
+				temp1[j] = BigInt(Math.round(x[j]));
+			}
+			for (let j = i; j < a - 1; j++) {
+				temp1[j] = BigInt(Math.round(x[j + 1]));
+			}
+			temp2[i] = new Array();
+			temp2[i][0] = 1n;
+			for (let j = 0; j < temp1.length; j++) {
+				temp3[0] = 0n;
+				for (let k = 0; k < temp2[i].length; k++) {
+					temp3[k + 1] = temp2[i][k];
+					temp4[k] = temp2[i][k] * (-1n) * temp1[j];
+				}
+				temp4[temp3.length - 1] = 0n;
+				if (temp2[i][temp3.length - 1] === undefined) {
+					temp2[i][temp3.length - 1] = 0n;
+				}
+				for (let l = 0; l < temp3.length; l++) {
+					temp2[i][l] = temp3[l] + temp4[l];
+				}
+				temp3 = [];
+				temp4 = [];
+			}
+			if (jindu < a) {
+				requestAnimationFrame(c2);
+				document.getElementById("c").innerHTML = jindu + '/114514';
+			}
+			jindu++;
+		}
+		function output() {
+			for (let i = 0; i <= a - 1; i++) {
+				result[i] = 0n;
+			}
+			for (let h = 0; h < temp2.length; h++) {
+				result[0] += temp2[h][0] * sup[h] / (10n ** BigInt(bit2)) * (10n ** BigInt(bit1)) / sub[h];
+				for (let i = 1; i < temp2[h].length; i++) {
+					result[i] += temp2[h][i] * sup[h] * (10n ** (BigInt(bit2) * (BigInt(i) - 1n))) * (10n ** BigInt(bit1)) / sub[h];
+				}
+			}
+			document.getElementById("c").innerHTML = "";
+			for (let a = 0; a < bit1; a++) {
+				str += "0";
+			}
+			for (let i = a - 1; i > 0; i--) {
+				document.getElementById("c").innerHTML += (result[i] < 0 && result[i] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[i] / (10n ** BigInt(bit1))) + "." + (str + (result[i] < 0 ? result[i] * -1n : result[i]).toString()).slice(bit1 * (-1)) + "x<sup>" + i + "</sup>+";
+			}
+			document.getElementById("c").innerHTML += (result[0] < 0 && result[0] > -1n * 10n ** BigInt(bit1) ? "-" : "") + (result[0] / (10n ** BigInt(bit1))) + "." + (str + (result[0] < 0 ? result[0] * -1n : result[0]).toString()).slice(bit1 * (-1));
+		}
+	</script>
+</head>
+
+<body>
+	<div id="c">
+		<p>一共<input type="number" value="2" id="n">个点</p>
+		<p>保留<input type="number" value="4" id="b">位小数</p>
+		<button onclick="s1()">确定</button>
+	</div>
+</body>
+
+</html>
